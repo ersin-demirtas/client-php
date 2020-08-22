@@ -1,21 +1,33 @@
 <?php
 namespace PolygonIO;
 
-use PolygonIO\rest\Rest;
-use PolygonIO\websockets\Websockets;
+use PolygonIO\Rest\Rest;
+use PolygonIO\Websockets\Websockets;
 
 class PolygonIO {
-    public $api_key;
-    public $rest;
-    public $websockets;
+
+    /**
+     * @var string
+     */
+    public string $apiKey;
+
+    /**
+     * @var Rest
+     */
+    public Rest $rest;
+
+    /**
+     * @var Websockets
+     */
+    public Websockets $websockets;
 
     /**
      * Polygon constructor.
      * @param $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
-        $this->api_key = $apiKey;
+        $this->apiKey = $apiKey;
         $this->rest = new Rest($apiKey);
         $this->websockets = new Websockets($apiKey);
     }

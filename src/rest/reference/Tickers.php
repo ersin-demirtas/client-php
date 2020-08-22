@@ -1,19 +1,20 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 /**
  * Class Tickers
  * @package PolygonIO\rest\reference
  */
 class Tickers extends RestResource {
-    public $route = '/v2/reference/tickers';
-    protected $defaultParams = [
-        'sort' => 'ticker',
-        'perPage' => 50,
-        'page' => 1,
-    ];
+    public string $route = '/v2/reference/tickers';
+    protected array $defaultParams
+        = [
+            'sort'    => 'ticker',
+            'perPage' => 50,
+            'page'    => 1,
+        ];
 
     /**
      * @param $params

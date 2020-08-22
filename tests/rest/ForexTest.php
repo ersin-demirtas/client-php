@@ -1,17 +1,29 @@
 <?php
-namespace PolygonIO\rest\forex;
-use PHPUnit\Framework\TestCase;
 
+namespace PolygonIO\Tests\Rest;
+
+use PolygonIO\Tests\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use PolygonIO\Rest\Forex\Aggregates;
+use PolygonIO\Rest\Forex\Forex;
+use PolygonIO\Rest\Forex\GroupedDaily;
+use PolygonIO\Rest\Forex\HistoricForexTick;
+use PolygonIO\Rest\Forex\LastQuoteForCurrencyPair;
+use PolygonIO\Rest\Forex\PreviousClose;
+use PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
+use PolygonIO\Rest\Forex\SnapshotAllTickers;
+use PolygonIO\Rest\Forex\SnapshotGainersLosers;
 
 class ForexTest extends TestCase {
 
-    public function testExportAllMethodsFromStocksApi() {
+    public function testExportAllMethodsFromStocksApi()
+    {
         $forex = new Forex('fake api key');
+
         $this->assertInstanceOf(Aggregates::class, $forex->aggregates);
         $this->assertInstanceOf(GroupedDaily::class, $forex->groupedDaily);
         $this->assertInstanceOf(PreviousClose::class, $forex->previousClose);
@@ -22,7 +34,8 @@ class ForexTest extends TestCase {
         $this->assertInstanceOf(SnapshotAllTickers::class, $forex->snapshotAllTickers);
     }
 
-    public function testPreviousCloseGetCall() {
+    public function testPreviousCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new PreviousClose('fake-api-key');

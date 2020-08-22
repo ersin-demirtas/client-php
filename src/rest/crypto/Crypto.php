@@ -1,20 +1,26 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Rest\Crypto;
 
 class Crypto {
-    public $aggregates;
-    public $groupedDaily;
-    public $previousClose;
-    public $cryptoExchanges;
-    public $lastTradeForCryptoPair;
-    public $dailyOpenClose;
-    public $historicCryptoTrade;
-    public $snapshotAllTickers;
-    public $snapshotGainersLosers;
-    public $snapshotSingleTicker;
-    public $snapshotSingleTickerFullBook;
 
-    public function __construct($apiKey)
+    public Aggregates $aggregates;
+    public GroupedDaily $groupedDaily;
+    public PreviousClose $previousClose;
+    public CryptoExchanges $cryptoExchanges;
+    public LastTradeForCryptoPair $lastTradeForCryptoPair;
+    public DailyOpenClose $dailyOpenClose;
+    public HistoricCryptoTrade $historicCryptoTrade;
+    public SnapshotAllTickers $snapshotAllTickers;
+    public SnapshotGainersLosers $snapshotGainersLosers;
+    public SnapshotSingleTicker $snapshotSingleTicker;
+    public SnapshotSingleTickerFullBook $snapshotSingleTickerFullBook;
+
+    /**
+     * Crypto constructor.
+     *
+     * @param  string  $apiKey
+     */
+    public function __construct(string $apiKey)
     {
         $this->previousClose = new PreviousClose($apiKey);
         $this->groupedDaily = new GroupedDaily($apiKey);

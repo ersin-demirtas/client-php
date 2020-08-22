@@ -1,13 +1,11 @@
 # Polygon.io php api client
 
-[![CircleCI](https://circleci.com/gh/polygon-io/client-php.svg?style=svg)](https://circleci.com/gh/polygon-io/client-php)
-
 ## Installation guide
 
 ### prerequisite
 
 - [composer](https://getcomposer.org/)
-- php > 7.2
+- php > 7.4
 
 ### install
 
@@ -24,15 +22,15 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 - forex
 - crypto
 
-```
+```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
 use PolygonIO\rest\Rest;
 
-$rest = new Rest('your api key')
+$rest = new Rest('your api key');
 
-print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
-
+$amount = 10;
+var_dump($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
 ```
 
 ## Websockets
@@ -40,19 +38,19 @@ print_r($rest->forex->realtimeCurrencyConverion->get('USD', 'EUR', 10));
 The websocket clients use the Amp event loop. 
 You can only use one websocket client by php thread since the event loop is in a blocking while loop.
 
-```
-
+```php
 <?php
+
 require __DIR__ . '/vendor/autoload.php';
 
-$client = new PolygonIO\PolygonIO('your apiKey');
+$client = new PolygonIO\PolygonIO('API_KEY');
 
-$client->websockets->forex->connect(
-    'C.USD',
-    function($data) {
-        // your handler function
-    }
-);
+$currencies = ['C.USD'];
+
+$client->websockets->crypto->connect($currencies, function($data) {
+    var_dump($data);
+});
+
 ```
 
 ## Developement
@@ -60,8 +58,9 @@ $client->websockets->forex->connect(
 ### prerequisite
 
 - [composer](https://getcomposer.org/)
-- php > 7.2
+- php > 7.4
 - ext-json
+- ext-ast
 
 ### use the tooling
 

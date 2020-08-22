@@ -5,9 +5,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $client = new PolygonIO\PolygonIO('API_KEY');
 
-$client->websockets->crypto->connect(
-    'C.USD',
-    function($data) {
-        var_dump($data);
-    }
-);
+$currencies = ['C.USD'];
+
+$client->websockets->crypto->connect($currencies, function($data) {
+    var_dump($data);
+});

@@ -1,17 +1,32 @@
 <?php
-namespace PolygonIO\rest\crypto;
-use PHPUnit\Framework\TestCase;
 
+namespace PolygonIO\Tests\Rest;
+
+use PolygonIO\Tests\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use PolygonIO\Rest\Crypto\Crypto;
+use PolygonIO\Rest\Crypto\CryptoExchanges;
+use PolygonIO\Rest\Crypto\DailyOpenClose;
+use PolygonIO\Rest\Crypto\HistoricCryptoTrade;
+use PolygonIO\Rest\Crypto\LastTradeForCryptoPair;
+use PolygonIO\Rest\Crypto\SnapshotSingleTicker;
+use PolygonIO\Rest\Crypto\SnapshotSingleTickerFullBook;
+use PolygonIO\Rest\Crypto\Aggregates;
+use PolygonIO\Rest\Crypto\GroupedDaily;
+use PolygonIO\Rest\Crypto\PreviousClose;
+use PolygonIO\Rest\Crypto\SnapshotAllTickers;
+use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
 
 class CryptoTest extends TestCase {
 
-    public function testExportAllMethodsFromCryptoApi() {
+    public function testExportAllMethodsFromCryptoApi()
+    {
         $crypto = new Crypto('fake api key');
+
         $this->assertInstanceOf(Aggregates::class, $crypto->aggregates);
         $this->assertInstanceOf(GroupedDaily::class, $crypto->groupedDaily);
         $this->assertInstanceOf(PreviousClose::class, $crypto->previousClose);
@@ -25,7 +40,8 @@ class CryptoTest extends TestCase {
         $this->assertInstanceOf(SnapshotSingleTickerFullBook::class, $crypto->snapshotSingleTickerFullBook);
     }
 
-    public function testPreviousCloseGetCall() {
+    public function testPreviousCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new PreviousClose('fake-api-key');
@@ -38,7 +54,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/prev');
     }
 
-    public function testAggregatesCloseGetCall() {
+    public function testAggregatesCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new Aggregates('fake-api-key');

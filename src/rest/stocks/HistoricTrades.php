@@ -1,17 +1,21 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class HistoricTrades extends RestResource {
-    protected $defaultParams = [
-        'limit' => 100
-    ];
-    public function get($tickerSymbol, $date) {
+
+    protected array $defaultParams
+        = [
+            'limit' => 100
+        ];
+
+    public function get($tickerSymbol, $date)
+    {
         return $this->_get('/v1/historic/trades/'.$tickerSymbol.'/'.$date);
     }
 
-    protected function mapper($response)
+    protected function mapper(array $response): array
     {
         $response['ticks'] = array_map(function ($tick) {
             $tick['condition1'] = $tick['c1'];

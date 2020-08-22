@@ -1,12 +1,13 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class StockFinancials extends RestResource {
-    protected $defaultParams = [
-       'limit' => 5,
-    ];
+    protected array $defaultParams
+        = [
+            'limit' => 5,
+        ];
 
     /**
      * @param $tickerSymbol

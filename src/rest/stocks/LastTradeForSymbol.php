@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class LastTradeForSymbol extends RestResource {
     public function get($tickerSymbol) {

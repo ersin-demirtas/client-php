@@ -1,23 +1,35 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Rest\Crypto;
 
-use PolygonIO\rest\Mappers;
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\Common\Mappers;
+use PolygonIO\Rest\RestResource;
 
 class SnapshotSingleTickerFullBook extends RestResource {
-    public function get($tickerSymbol) {
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array|mixed
+     */
+    public function get(string $tickerSymbol)
+    {
         return $this->_get('/v2/snapshot/locale/global/markets/crypto/tickers/'.$tickerSymbol.'/book');
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         if(array_key_exists('asks', $response['data'])) {
-            $response['data']['asks'] = array_merge(function($ask) {
+            $response['data']['asks'] = array_map(function($ask) {
                 return Mappers::cryptoSnapshotBookItem($ask);
             }, $response['data']['asks']);
         }
         if (array_key_exists('bids', $response['data'])) {
-            $response['data']['bids'] = array_merge(function($bid) {
+            $response['data']['bids'] = array_map(function($bid) {
                 return Mappers::cryptoSnapshotBookItem($bid);
             }, $response['data']['bids']);
         }

@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
 
 class Stocks

@@ -1,14 +1,14 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 /**
  * Class MarketHolidays
  * @package PolygonIO\rest\reference
  */
 class MarketHolidays extends RestResource {
-    protected $route = 'GET	/v1/marketstatus/upcoming';
+    protected string $route = 'GET	/v1/marketstatus/upcoming';
 
     public function get() {
         return $this->_get($this->route);

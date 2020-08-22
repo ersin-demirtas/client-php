@@ -1,10 +1,23 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
+/**
+ * Class DailyOpenClose
+ *
+ * @package PolygonIO\rest\stocks
+ */
 class DailyOpenClose extends RestResource {
-    public function get($tickerSymbol, $date) {
+
+    /**
+     * @param $tickerSymbol
+     * @param $date
+     *
+     * @return mixed
+     */
+    public function get($tickerSymbol, $date)
+    {
         return $this->_get('/v1/open-close/'.$tickerSymbol.'/'.$date);
     }
 }

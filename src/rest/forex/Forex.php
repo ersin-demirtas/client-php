@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\Rest\Forex;
 
 class Forex {
     public $aggregates;

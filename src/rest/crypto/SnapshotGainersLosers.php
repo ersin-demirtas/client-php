@@ -1,19 +1,32 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Rest\Crypto;
 
-use PolygonIO\rest\Mappers;
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\Common\Mappers;
+use PolygonIO\Rest\RestResource;
 
 class SnapshotGainersLosers extends RestResource {
-    public function get($direction = 'gainers') {
+
+    /**
+     * @param  string  $direction
+     *
+     * @return array|mixed
+     */
+    public function get($direction = 'gainers')
+    {
         return $this->_get('/v2/snapshot/locale/global/markets/crypto/'.$direction);
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         $response['tickers'] = array_map(function ($ticker) {
             return Mappers::snapshotTicker($ticker);
         }, $response['tickers']);
+
         return $response;
     }
 }

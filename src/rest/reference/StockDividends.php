@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 /**
  * Class StockDividends

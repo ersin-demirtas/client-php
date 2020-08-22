@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Rest\Crypto;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class LastTradeForCryptoPair extends RestResource {
     public function get($from, $to) {

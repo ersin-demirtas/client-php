@@ -1,12 +1,14 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class Exchanges extends RestResource {
-    protected $route = '/v1/meta/exchanges';
 
-    public function get() {
+    protected string $route = '/v1/meta/exchanges';
+
+    public function get()
+    {
         return $this->_get($this->route);
     }
 }

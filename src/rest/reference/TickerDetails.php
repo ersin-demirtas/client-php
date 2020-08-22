@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 /**
  * Class TickerDetails
@@ -16,7 +16,8 @@ class TickerDetails extends RestResource {
         return $this->_get('/v1/meta/symbols/'.$tickerSymbol.'/company');
     }
 
-    protected function mapper($response) {
+    protected function mapper(array $response): array
+    {
         $response['legalEntityIdentifier'] = $response['lei'];
         $response['standardIndustryClassification'] = $response['sic'];
         return $response;

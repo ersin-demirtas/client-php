@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\websockets;
+namespace PolygonIO\Websockets;
 
 /**
  * Class Websockets
@@ -11,19 +11,24 @@ class Websockets {
     /**
      * @var WebsocketResource
      */
-    public $stocks;
+    public WebsocketResource $stocks;
 
     /**
      * @var WebsocketResource
      */
-    public $crypto;
+    public WebsocketResource $crypto;
 
     /**
      * @var WebsocketResource
      */
-    public $forex;
+    public WebsocketResource $forex;
 
-    public function __construct($apiKey)
+    /**
+     * Websockets constructor.
+     *
+     * @param  string  $apiKey
+     */
+    public function __construct(string $apiKey)
     {
         $this->crypto = new WebsocketResource('crypto', $apiKey);
         $this->forex = new WebsocketResource('forex', $apiKey);

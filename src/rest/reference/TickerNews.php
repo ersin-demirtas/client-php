@@ -1,17 +1,18 @@
 <?php
-namespace PolygonIO\rest\reference;
+namespace PolygonIO\Rest\Reference;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 /**
  * Class TickerNews
  * @package PolygonIO\rest\reference
  */
 class TickerNews extends RestResource {
-    protected $defaultParams = [
-        'perPage' => 50,
-        'page' => 1,
-    ];
+    protected array $defaultParams
+        = [
+            'perPage' => 50,
+            'page'    => 1,
+        ];
 
     /**
      * @param $tickerSymbol

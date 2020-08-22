@@ -1,15 +1,23 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\Rest\Forex;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class RealTimeCurrencyConversion extends RestResource {
-    protected $defaultParams = [
-        'amount' => 100,
-        'precision' => 2,
-    ];
+    protected array $defaultParams = [
+                        'amount'    => 100,
+                        'precision' => 2,
+                    ];
 
-    public function get($from, $to, $params = []) {
-        return $this->_get('/v1/conversion/'.$from.'/'.$to, $params);
+    /**
+     * @param $from
+     * @param $to
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function get(string $from, string $to, array $params = [])
+    {
+        return $this->_get('/v1/conversion/' . $from . '/' . $to, $params);
     }
 }

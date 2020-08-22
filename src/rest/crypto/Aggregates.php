@@ -1,19 +1,42 @@
 <?php
-namespace PolygonIO\rest\crypto;
+namespace PolygonIO\Rest\Crypto;
 
-use PolygonIO\rest\Mappers;
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\Common\Mappers;
+use PolygonIO\Rest\RestResource;
 
+/**
+ * Class Aggregates
+ *
+ * @package PolygonIO\Rest\Crypto
+ */
 class Aggregates extends RestResource {
-    public function get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []){
-        return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/range/'.$multiplier.'/'.$timespan.'/'.$from.'/'.$to, $params);
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $multiplier
+     * @param  string  $from
+     * @param  string  $to
+     * @param  string  $timespan
+     * @param  array  $params
+     *
+     * @return mixed
+     */
+    public function get(string $tickerSymbol, string $multiplier, string $from, string $to, string $timespan = 'days', array $params = [])
+    {
+        return $this->_get("/v2/aggs/ticker/${tickerSymbol}/range/${multiplier}/${timespan}/${from}/${to}", $params);
     }
 
-    protected function mapper($response)
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
     {
         $response['results'] = array_map(function ($result) {
             return Mappers::snapshotAggV2($result);
         }, $response['results']);
+
         return $response;
     }
 }

@@ -1,15 +1,15 @@
 <?php
-namespace PolygonIO\rest\stocks;
+namespace PolygonIO\Rest\Stocks;
 
-use PolygonIO\rest\Mappers;
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\Common\Mappers;
+use PolygonIO\Rest\RestResource;
 
 class SnapshotSingleTicker extends RestResource {
     public function get($tickerSymbol) {
         return $this->_get('/v2/snapshot/locale/us/markets/stocks/tickers/'.$tickerSymbol);
     }
 
-    protected function mapper($response)
+    protected function mapper(array $response): array
     {
         $response['ticker'] = Mappers::snapshotTicker($response['ticker']);
         return $response;

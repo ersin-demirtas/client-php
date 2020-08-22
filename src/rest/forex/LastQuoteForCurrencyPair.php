@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\rest\forex;
+namespace PolygonIO\Rest\Forex;
 
-use PolygonIO\rest\RestResource;
+use PolygonIO\Rest\RestResource;
 
 class LastQuoteForCurrencyPair extends RestResource {
     public function get($from, $to) {

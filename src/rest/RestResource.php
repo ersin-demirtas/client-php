@@ -1,17 +1,40 @@
 <?php
-namespace PolygonIO\rest;
+namespace PolygonIO\Rest;
+
+
+use GuzzleHttp\Client;
 
 /**
  * Class RestResource
+ *
  * @package PolygonIO\rest
  */
 abstract class RestResource {
-    protected $defaultParams = [];
-    protected $route;
 
-    public $httpClient;
-    protected $API_URL = 'https://api.polygon.io';
-    protected $api_key;
+    /**
+     * @var Client
+     */
+    public Client $httpClient;
+
+    /**
+     * @var string
+     */
+    protected string $API_URL = 'https://api.polygon.io';
+
+    /**
+     * @var string
+     */
+    protected string $apiKey;
+
+    /**
+     * @var array
+     */
+    protected array $defaultParams = [];
+
+    /**
+     * @var string
+     */
+    protected string $route;
 
     /**
      * Polygon constructor.
@@ -19,14 +42,21 @@ abstract class RestResource {
      */
     public function __construct($apiKey)
     {
-        $this->api_key = $apiKey;
-        $this->httpClient = new \GuzzleHttp\Client();
+        $this->apiKey = $apiKey;
+        $this->httpClient = new Client();
     }
 
-    protected function _get($route, $params = []){
+    /**
+     * @param  string  $route
+     * @param  array  $params
+     *
+     * @return mixed
+     */
+    protected function _get(string $route, array $params = [])
+    {
         $enhancedParams =  array_merge(
             [
-                'apiKey' => $this->api_key,
+                'apiKey' => $this->apiKey,
             ],
             array_merge(
                 $this->defaultParams,
@@ -34,7 +64,7 @@ abstract class RestResource {
             )
         );
 
-        $route = $this->API_URL.$route;
+        $route = $this->API_URL . $route;
         $response = $this->httpClient->get($route, [
             'query' => $enhancedParams
         ]);
@@ -44,7 +74,13 @@ abstract class RestResource {
         return $this->mapper($json);
     }
 
-    protected function mapper($response) {
+    /**
+     * @param array $response
+     *
+     * @return array
+     */
+    protected function mapper(array $response): array
+    {
        return $response;
     }
 }
