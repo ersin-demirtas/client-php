@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
 class MarketStatus extends RestResource {
     protected string $route = '/v1/marketstatus/now';
 
-    public function get() {
+    public function get()
+    {
         return $this->_get($this->route);
     }
 }

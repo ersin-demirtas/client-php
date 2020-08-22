@@ -5,7 +5,8 @@ use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
 class SnapshotAllTickers extends RestResource {
-    public function get() {
+    public function get()
+    {
         return $this->_get('/v2/snapshot/locale/us/markets/stocks/tickers');
     }
 

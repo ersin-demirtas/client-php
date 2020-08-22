@@ -10,7 +10,8 @@ class HistoricTradesV2 extends RestResource {
             'limit' => 100
         ];
 
-    public function get($tickerSymbol, $date) {
+    public function get($tickerSymbol, $date)
+    {
         return $this->_get('/v2/ticks/stocks/trades/'.$tickerSymbol.'/'.$date);
     }
 

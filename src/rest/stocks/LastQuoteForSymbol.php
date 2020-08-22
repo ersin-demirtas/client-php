@@ -15,7 +15,8 @@ class LastQuoteForSymbol extends RestResource {
      *
      * @return mixed
      */
-    public function get($tickerSymbol) {
+    public function get($tickerSymbol)
+    {
         return $this->_get('/v1/last_quote/stocks/'.$tickerSymbol);
     }
 }

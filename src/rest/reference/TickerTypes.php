@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
 class TickerTypes extends RestResource {
     protected string $route = '/v2/reference/types';
 
-    public function get() {
+    public function get()
+    {
         return $this->_get($this->route);
     }
 }
