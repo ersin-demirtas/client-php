@@ -3,11 +3,6 @@
 namespace PolygonIO\Tests\Rest;
 
 use PolygonIO\Tests\TestCase;
-use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
 use PolygonIO\Rest\Stocks\Stocks;
 use PolygonIO\Rest\Stocks\Exchanges;
 use PolygonIO\Rest\Stocks\HistoricTrades;
@@ -272,19 +267,6 @@ class StocksTest extends TestCase {
         $groupedDaily->get('2019-2-2');
 
         $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/STOCKS/2019-2-2');
-    }
-
-    private function getHttpMock(&$requestsContainer, $response=[]) {
-
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($response)),
-        ]);
-        $handler = HandlerStack::create($mock);
-
-        $history = Middleware::history($requestsContainer);
-        $handler->push($history);
-
-        return new Client(['handler' => $handler]);
     }
 
     private function assertPath($requests, $path) {

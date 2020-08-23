@@ -135,11 +135,11 @@ class Mappers {
      */
     public static function cryptoTick(array $tick): array
     {
-        $tick['price'] = $tick['p'] ?? '';
-        $tick['size'] = $tick['s'] ?? '';
-        $tick['exchange'] = $tick['x'] ?? '';
-        $tick['conditions'] = $tick['c'] ?? '';
-        $tick['timestamp'] = $tick['t'] ?? '';
+        $tick['price'] = $tick['p'];
+        $tick['size'] = $tick['s'];
+        $tick['exchange'] = $tick['x'];
+        $tick['conditions'] = $tick['c'];
+        $tick['timestamp'] = $tick['t'];
 
         return $tick;
     }
@@ -151,7 +151,7 @@ class Mappers {
      */
     public static function cryptoSnapshotBookItem (array $item): array
     {
-        $item['price'] = $item['p'] ?? '';
+        $item['price'] = $item['p'];
 
         return $item;
     }

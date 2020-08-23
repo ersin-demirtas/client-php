@@ -3,11 +3,6 @@
 namespace PolygonIO\Tests\Rest;
 
 use PolygonIO\Tests\TestCase;
-use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
 use PolygonIO\Rest\Reference\Reference;
 use PolygonIO\Rest\Reference\Tickers;
 use PolygonIO\Rest\Reference\TickerTypes;
@@ -160,19 +155,6 @@ class ReferenceTest extends TestCase {
         $marketHolidays->get();
 
         $this->assertPath($requestsContainer, '/v1/marketstatus/upcoming');
-    }
-
-    private function getHttpMock(&$requestsContainer, $response=[]) {
-
-        $mock = new MockHandler([
-            new Response(200, [], json_encode($response)),
-        ]);
-        $handler = HandlerStack::create($mock);
-
-        $history = Middleware::history($requestsContainer);
-        $handler->push($history);
-
-        return new Client(['handler' => $handler]);
     }
 
     private function assertPath($requests, $path) {
