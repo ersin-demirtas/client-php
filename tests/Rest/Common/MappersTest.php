@@ -112,7 +112,7 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 
-    public function snapshotAgg ()
+    public function testSnapshotAgg ()
     {
         $snapData = [
             'c' => 'a',
