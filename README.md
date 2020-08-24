@@ -15,7 +15,7 @@ composer require polygon-io/api
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
 
-The `\PolygonIO\rest\Rest` class export 4 modules:
+The `\PolygonIO\Rest\Rest` class export 4 modules:
 
 - reference
 - stocks
@@ -25,9 +25,9 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 ```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use PolygonIO\rest\Rest;
+use PolygonIO\Rest\Rest;
 
-$rest = new Rest('your api key');
+$rest = new Rest('API_KEY');
 
 $amount = 10;
 var_dump($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
@@ -45,7 +45,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $client = new PolygonIO\PolygonIO('API_KEY');
 
-$currencies = ['C.USD'];
+$currencies = ['XT.*'];
 
 $client->websockets->crypto->connect($currencies, function($data) {
     var_dump($data);
@@ -66,13 +66,9 @@ $client->websockets->crypto->connect($currencies, function($data) {
 
 Install dependencies
 ```
-composer require
+composer install
 ```
 
-Run the linter
-```bash
-./vendor/bin/phplint .
-```
 
 Run the tests
 ```
