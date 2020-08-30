@@ -10,7 +10,6 @@ use PolygonIO\Rest\RestResource;
  */
 class Tickers extends RestResource
 {
-
     /**
      * @var string
      */
@@ -26,6 +25,7 @@ class Tickers extends RestResource
             'page'    => 1,
         ];
 
+
     /**
      * @param  array  $params
      *
@@ -34,5 +34,29 @@ class Tickers extends RestResource
     public function get(array $params = [])
     {
         return $this->_get($this->route, $params);
+    }
+
+    /**
+     * @param  callable  $closure
+     */
+    public function all(callable $closure): void
+    {
+        $currentPage = 1;
+
+        do {
+            $resource = $this->get([
+                'page' => $currentPage
+            ]);
+
+            $tickers = $resource['tickers'];
+
+            foreach ($tickers as $ticker) {
+                $closure($ticker);
+            }
+
+            $totalPage = intval(intval($resource['count']) / intval($resource['perPage']));
+            $currentPage++;
+
+        } while ($currentPage <= $totalPage);
     }
 }
