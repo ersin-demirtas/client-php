@@ -13,7 +13,7 @@ class MarketHolidays extends RestResource
     /**
      * @var string
      */
-    protected string $route = 'GET	/v1/marketstatus/upcoming';
+    protected string $route = '/v1/marketstatus/upcoming';
 
     /**
      * @return array|mixed
