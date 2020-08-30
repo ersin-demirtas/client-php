@@ -2,12 +2,12 @@
 
 ## Installation guide
 
-### prerequisite
+### Prerequisite
 
 - [composer](https://getcomposer.org/)
 - [php > 7.4](https://www.php.net/)
 
-### install
+### Install
 
 ``` 
 composer require polygon-io/api
@@ -55,14 +55,14 @@ $client->websockets->crypto->connect($currencies, function($data) {
 
 ## Development
 
-### prerequisite
+### Prerequisite
 
 - [composer](https://getcomposer.org/)
 - [php > 7.4](https://www.php.net/)
 - [ext-json](https://www.php.net/manual/en/json.installation.php)
 - [ext-ast](https://github.com/nikic/php-ast#installation)
 
-### use the tooling
+### Use the tooling
 
 Install dependencies
 ```
