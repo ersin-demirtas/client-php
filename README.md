@@ -27,7 +27,7 @@ The `\PolygonIO\rest\Rest` class export 4 modules:
 require __DIR__ . '/vendor/autoload.php';
 use PolygonIO\rest\Rest;
 
-$rest = new Rest('your api key');
+$rest = new Rest('API_KEY');
 
 $amount = 10;
 var_dump($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
