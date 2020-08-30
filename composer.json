@@ -11,7 +11,7 @@
         {
             "name": "Ersin Demirtas",
             "email": "ed5@me.com"
-        }        `  
+        }
     ],
     "require": {
         "php": "^7.4",
