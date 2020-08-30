@@ -20,9 +20,10 @@ use PolygonIO\Rest\Stocks\PreviousClose;
 use PolygonIO\Rest\Stocks\Aggregates;
 use PolygonIO\Rest\Stocks\GroupedDaily;
 
-class StocksTest extends TestCase {
-
-    public function testExportAllMethodsFromStocksApi() {
+class StocksTest extends TestCase
+{
+    public function testExportAllMethodsFromStocksApi()
+    {
         $stocks = new Stocks('fake api key');
         $this->assertInstanceOf(Exchanges::class, $stocks->exchanges);
         $this->assertInstanceOf(HistoricTrades::class, $stocks->historicTrades);
@@ -41,7 +42,8 @@ class StocksTest extends TestCase {
         $this->assertInstanceOf(GroupedDaily::class, $stocks->groupedDaily);
     }
 
-    public function testExchangesGetCall() {
+    public function testExchangesGetCall()
+    {
         $requestsContainer = [];
 
         $exchanges = new Exchanges('fake-api-key');
@@ -52,7 +54,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/meta/exchanges');
     }
 
-    public function testHistoricTradesGetCall() {
+    public function testHistoricTradesGetCall()
+    {
         $requestsContainer = [];
 
         $historicTrades = new HistoricTrades('fake-api-key');
@@ -63,10 +66,10 @@ class StocksTest extends TestCase {
         $historicTrades->get('AAPL', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v1/historic/trades/AAPL/2019-2-2');
-
     }
 
-    public function testHistoricTradesV2GetCall() {
+    public function testHistoricTradesV2GetCall()
+    {
         $requestsContainer = [];
 
         $historicTradesV2 = new HistoricTradesV2('fake-api-key');
@@ -77,10 +80,10 @@ class StocksTest extends TestCase {
         $historicTradesV2->get('AAPL', '2019-2-2');
 
         $this->assertPath($requestsContainer, '/v2/ticks/stocks/trades/AAPL/2019-2-2');
-
     }
 
-    public function testHistoricQuotesGetCall() {
+    public function testHistoricQuotesGetCall()
+    {
         $requestsContainer = [];
 
         $historicQuotes = new HistoricQuotes('fake-api-key');
@@ -93,7 +96,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/historic/quotes/AAPL/2019-2-2');
     }
 
-    public function testHistoricQuotesV2GetCall() {
+    public function testHistoricQuotesV2GetCall()
+    {
         $requestsContainer = [];
 
         $historicQuotesV2 = new HistoricQuotesV2('fake-api-key');
@@ -107,7 +111,8 @@ class StocksTest extends TestCase {
     }
 
 
-    public function testLastTradeForSymbolGetCall() {
+    public function testLastTradeForSymbolGetCall()
+    {
         $requestsContainer = [];
 
         $lastTradeForSymbol = new LastTradeForSymbol('fake-api-key');
@@ -118,7 +123,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last/stocks/AAPL');
     }
 
-    public function testLastQuoteForSymbolGetCall() {
+    public function testLastQuoteForSymbolGetCall()
+    {
         $requestsContainer = [];
 
         $lastTradeForSymbol = new LastQuoteForSymbol('fake-api-key');
@@ -129,7 +135,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last_quote/stocks/AAPL');
     }
 
-    public function testDailyOpenCloseGetCall() {
+    public function testDailyOpenCloseGetCall()
+    {
         $requestsContainer = [];
 
         $dailyOpenClose = new DailyOpenClose('fake-api-key');
@@ -140,7 +147,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/open-close/AAPL/2019-2-2');
     }
 
-    public function testConditionMappingsGetCall() {
+    public function testConditionMappingsGetCall()
+    {
         $requestsContainer = [];
 
         $conditionMappings = new ConditionMappings('fake-api-key');
@@ -151,7 +159,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/meta/conditions/trades');
     }
 
-    public function testSnapshotAllTickersGetCall() {
+    public function testSnapshotAllTickersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotAllTickers = new SnapshotAllTickers('fake-api-key');
@@ -164,7 +173,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/tickers');
     }
 
-    public function testSnapshotSingleTickerGetCall() {
+    public function testSnapshotSingleTickerGetCall()
+    {
         $requestsContainer = [];
 
         $singleTicker = new SnapshotSingleTicker('fake-api-key');
@@ -217,7 +227,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/tickers/AAPL');
     }
 
-    public function testSnapshotGainersLosersGetCall() {
+    public function testSnapshotGainersLosersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
@@ -230,7 +241,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/us/markets/stocks/gainers');
     }
 
-    public function testPreviousCloseGetCall() {
+    public function testPreviousCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new PreviousClose('fake-api-key');
@@ -243,7 +255,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/prev');
     }
 
-    public function testAggregatesCloseGetCall() {
+    public function testAggregatesCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new Aggregates('fake-api-key');
@@ -256,7 +269,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/range/1/days/2018-2-2/2019-2-2');
     }
 
-    public function testGroupedDailyGetCall() {
+    public function testGroupedDailyGetCall()
+    {
         $requestsContainer = [];
 
         $groupedDaily = new GroupedDaily('fake-api-key');
@@ -269,7 +283,8 @@ class StocksTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/STOCKS/2019-2-2');
     }
 
-    private function assertPath($requests, $path) {
+    private function assertPath($requests, $path)
+    {
         $this->assertCount(1, $requests);
         $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
     }

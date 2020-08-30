@@ -16,8 +16,8 @@ use PolygonIO\Rest\Crypto\PreviousClose;
 use PolygonIO\Rest\Crypto\SnapshotAllTickers;
 use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
 
-class CryptoTest extends TestCase {
-
+class CryptoTest extends TestCase
+{
     public function testExportAllMethodsFromCryptoApi()
     {
         $crypto = new Crypto('fake api key');
@@ -63,7 +63,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/range/1/days/2018-2-2/2019-2-2');
     }
 
-    public function testGroupedDailyGetCall() {
+    public function testGroupedDailyGetCall()
+    {
         $requestsContainer = [];
 
         $groupedDaily = new GroupedDaily('fake-api-key');
@@ -76,7 +77,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/CRYPTO/2019-2-2');
     }
 
-    public function testCryptoExchangesGetCall() {
+    public function testCryptoExchangesGetCall()
+    {
         $requestsContainer = [];
 
         $cryptoExchanges = new CryptoExchanges('fake-api-key');
@@ -88,7 +90,8 @@ class CryptoTest extends TestCase {
     }
 
 
-    public function testLastTradeForCryptoPairGetCall() {
+    public function testLastTradeForCryptoPairGetCall()
+    {
         $requestsContainer = [];
 
         $lastTradeForCryptoPair = new LastTradeForCryptoPair('fake-api-key');
@@ -99,7 +102,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last/crypto/BTC/ETH');
     }
 
-    public function testDailtOpenCloseGetCall() {
+    public function testDailtOpenCloseGetCall()
+    {
         $requestsContainer = [];
 
         $dailyOpenClose = new DailyOpenClose('fake-api-key');
@@ -110,7 +114,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/open-close/crypto/BTC/ETH/2018-2-2');
     }
 
-    public function testHistoricCryptoTradeGetCall() {
+    public function testHistoricCryptoTradeGetCall()
+    {
         $requestsContainer = [];
 
         $historicCryptoTrade = new HistoricCryptoTrade('fake-api-key');
@@ -123,7 +128,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/historic/crypto/BTC/ETH/2018-2-2');
     }
 
-    public function testSnapshotAllTickersGetCall() {
+    public function testSnapshotAllTickersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotAllTickers = new SnapshotAllTickers('fake-api-key');
@@ -136,7 +142,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/global/markets/crypto/tickers');
     }
 
-    public function testSnapshotSingleTickerGetCall() {
+    public function testSnapshotSingleTickerGetCall()
+    {
         $requestsContainer = [];
 
         $singleTicker = new SnapshotSingleTicker('fake-api-key');
@@ -179,7 +186,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/global/markets/crypto/tickers/BTC-ETH');
     }
 
-    public function testSnapshotGainersLosersGetCall() {
+    public function testSnapshotGainersLosersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
@@ -192,7 +200,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/global/markets/crypto/gainers');
     }
 
-    public function testSnapshotSingleTickerFullbookGetCall() {
+    public function testSnapshotSingleTickerFullbookGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotSingleTickerFullBook = new SnapshotSingleTickerFullBook('fake-api-key');
@@ -206,7 +215,8 @@ class CryptoTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/global/markets/crypto/tickers/BTC-ETH/book');
     }
 
-    private function assertPath($requests, $path) {
+    private function assertPath($requests, $path)
+    {
         $this->assertCount(1, $requests);
         $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
     }

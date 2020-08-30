@@ -74,7 +74,7 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 
-    public function testTradeV1 ()
+    public function testTradeV1()
     {
         $tickData = [
             'c1' => 'a',
@@ -112,7 +112,7 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 
-    public function snapshotAgg ()
+    public function snapshotAgg()
     {
         $snapData = [
             'c' => 'a',
@@ -141,7 +141,7 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 
-    public function testSnapshotAggV2 ()
+    public function testSnapshotAggV2()
     {
         $snapData = [
             'T' => 'a',
@@ -297,7 +297,7 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 
-    public function testSnapshotCryptoTicker ()
+    public function testSnapshotCryptoTicker()
     {
         $tickData = [
             'day' => [
@@ -433,4 +433,3 @@ class MappersTest extends TestCase
         $this->assertEquals($expected, $actualData);
     }
 }
-

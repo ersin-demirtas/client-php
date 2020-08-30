@@ -13,8 +13,8 @@ use PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
 use PolygonIO\Rest\Forex\SnapshotAllTickers;
 use PolygonIO\Rest\Forex\SnapshotGainersLosers;
 
-class ForexTest extends TestCase {
-
+class ForexTest extends TestCase
+{
     public function testExportAllMethodsFromStocksApi()
     {
         $forex = new Forex('fake api key');
@@ -43,7 +43,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/prev');
     }
 
-    public function testAggregatesCloseGetCall() {
+    public function testAggregatesCloseGetCall()
+    {
         $requestsContainer = [];
 
         $previousClose = new Aggregates('fake-api-key');
@@ -56,7 +57,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/ticker/AAPL/range/1/days/2018-2-2/2019-2-2');
     }
 
-    public function testGroupedDailyGetCall() {
+    public function testGroupedDailyGetCall()
+    {
         $requestsContainer = [];
 
         $groupedDaily = new GroupedDaily('fake-api-key');
@@ -69,7 +71,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/aggs/grouped/locale/US/market/FX/2019-2-2');
     }
 
-    public function testHistoricForexTickGetCall() {
+    public function testHistoricForexTickGetCall()
+    {
         $requestsContainer = [];
 
         $historicForexTick = new HistoricForexTick('fake-api-key');
@@ -80,7 +83,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/historic/forex/USD/AUD/2018-2-2');
     }
 
-    public function testRealTimeCurrencyConversionGetCall() {
+    public function testRealTimeCurrencyConversionGetCall()
+    {
         $requestsContainer = [];
 
         $realTimeCurrencyConversion = new RealTimeCurrencyConversion('fake-api-key');
@@ -91,7 +95,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/conversion/USD/AUD');
     }
 
-    public function testLastQuoteForCurrencyPairGetCall() {
+    public function testLastQuoteForCurrencyPairGetCall()
+    {
         $requestsContainer = [];
 
         $lastQuoteForCurrencyPair = new LastQuoteForCurrencyPair('fake-api-key');
@@ -102,7 +107,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v1/last_quote/currencies/USD/AUD');
     }
 
-    public function testSnapshotGainersLosersGetCall() {
+    public function testSnapshotGainersLosersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotGainersLosers = new SnapshotGainersLosers('fake-api-key');
@@ -115,7 +121,8 @@ class ForexTest extends TestCase {
         $this->assertPath($requestsContainer, '/v2/snapshot/locale/global/markets/forex/gainers');
     }
 
-    public function testSnapshotAllTickersGetCall() {
+    public function testSnapshotAllTickersGetCall()
+    {
         $requestsContainer = [];
 
         $snapshotAllTickers = new SnapshotAllTickers('fake-api-key');
@@ -129,7 +136,8 @@ class ForexTest extends TestCase {
     }
 
 
-    private function assertPath($requests, $path) {
+    private function assertPath($requests, $path)
+    {
         $this->assertCount(1, $requests);
         $this->assertEquals($path, $requests[0]['request']->getUri()->getPath());
     }
