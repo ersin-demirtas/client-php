@@ -15,7 +15,7 @@ composer require polygon-io/api
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
 
-The `\PolygonIO\rest\Rest` class export 4 modules:
+The `\PolygonIO\Rest\Rest` class export 4 modules:
 
 - reference
 - stocks
