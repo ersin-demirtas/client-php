@@ -37,6 +37,8 @@ class WebsocketResource {
      */
     public function connect(array $subscriptions, callable $onMessageCallback)
     {
+        $subscriptions = implode(",",$subscriptions);
+
         \Amp\Loop::run(function () use ($onMessageCallback, $subscriptions) {
             /** @var Websocket\Connection $connection */
             $connection = yield Websocket\connect($this->SOCKET_URI);
