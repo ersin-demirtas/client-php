@@ -25,7 +25,7 @@ The `\PolygonIO\Rest\Rest` class export 4 modules:
 ```php
 <?php
 require __DIR__ . '/vendor/autoload.php';
-use PolygonIO\rest\Rest;
+use PolygonIO\Rest\Rest;
 
 $rest = new Rest('API_KEY');
 
