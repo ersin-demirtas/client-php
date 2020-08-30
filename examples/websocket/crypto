@@ -1,6 +1,14 @@
 #!/usr/bin/env php
 <?php
 
+/**
+ * This is an example PHP script that uses websocket to subscribe Crypto topic
+ * and receive quotes for BTC-USD.
+ *
+ * Replace the API_KEY to your own api key and run ./crypto in your terminal.
+ * If you are getting permission issue, run "chmod +x ./crypto"
+ */
+
 require __DIR__ . '/../../vendor/autoload.php';
 
 $client = new PolygonIO\PolygonIO('API_KEY');
