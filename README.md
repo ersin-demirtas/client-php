@@ -45,7 +45,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $client = new PolygonIO\PolygonIO('API_KEY');
 
-$currencies = ['C.USD'];
+$currencies = ['XQ.BTC-USD'];
 
 $client->websockets->crypto->connect($currencies, function($data) {
     var_dump($data);
