@@ -5,7 +5,7 @@
 ### prerequisite
 
 - [composer](https://getcomposer.org/)
-- php > 7.4
+- [php > 7.4](https://www.php.net/)
 
 ### install
 
@@ -58,9 +58,9 @@ $client->websockets->crypto->connect($currencies, function($data) {
 ### prerequisite
 
 - [composer](https://getcomposer.org/)
-- php > 7.4
-- ext-json
-- ext-ast
+- [php > 7.4](https://www.php.net/)
+- [ext-json](https://www.php.net/manual/en/json.installation.php)
+- [ext-ast](https://github.com/nikic/php-ast#installation)
 
 ### use the tooling
 
