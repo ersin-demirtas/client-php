@@ -10,7 +10,7 @@
 ### Install
 
 ``` 
-composer require polygon-io/api
+composer require ersindemirtas/polygonio-php-client
 ```
 
 ## [Rest API](https://polygon.io/docs/#getting-started)
