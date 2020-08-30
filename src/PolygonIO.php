@@ -4,7 +4,8 @@ namespace PolygonIO;
 use PolygonIO\Rest\Rest;
 use PolygonIO\Websockets\Websockets;
 
-class PolygonIO {
+class PolygonIO
+{
 
     /**
      * @var string

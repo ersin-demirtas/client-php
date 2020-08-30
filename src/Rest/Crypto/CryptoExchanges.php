@@ -3,8 +3,8 @@ namespace PolygonIO\Rest\Crypto;
 
 use PolygonIO\Rest\RestResource;
 
-class CryptoExchanges extends RestResource {
-
+class CryptoExchanges extends RestResource
+{
     public string $route = '/v1/meta/crypto-exchanges';
 
     /**

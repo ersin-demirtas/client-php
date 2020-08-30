@@ -1,8 +1,8 @@
 <?php
 namespace PolygonIO\Rest\Crypto;
 
-class Crypto {
-
+class Crypto
+{
     public Aggregates $aggregates;
     public GroupedDaily $groupedDaily;
     public PreviousClose $previousClose;

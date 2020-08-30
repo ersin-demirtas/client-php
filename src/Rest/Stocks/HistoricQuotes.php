@@ -10,7 +10,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Stocks
  */
-class HistoricQuotes extends RestResource {
+class HistoricQuotes extends RestResource
+{
 
     /**
      * @var array|int[]

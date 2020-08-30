@@ -8,7 +8,8 @@ use Amp\Websocket;
  *
  * @package PolygonIO\websockets
  */
-class WebsocketResource {
+class WebsocketResource
+{
     /**
      * @var string
      */
@@ -37,7 +38,7 @@ class WebsocketResource {
      */
     public function connect(array $subscriptions, callable $onMessageCallback)
     {
-        $subscriptions = implode(",",$subscriptions);
+        $subscriptions = implode(",", $subscriptions);
 
         \Amp\Loop::run(function () use ($onMessageCallback, $subscriptions) {
             /** @var Websocket\Connection $connection */
@@ -46,7 +47,7 @@ class WebsocketResource {
             yield $connection->send('{"action":"auth", "params":"'.$this->apiKey.'"}');
             yield $connection->send(json_encode([
                 "action" => "subscribe",
-	            "params" => $subscriptions,
+                "params" => $subscriptions,
             ]));
 
             /** @var Websocket\Message $message */

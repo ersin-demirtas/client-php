@@ -7,7 +7,8 @@ use PolygonIO\Rest\RestResource;
  * Class TickerNews
  * @package PolygonIO\rest\reference
  */
-class TickerNews extends RestResource {
+class TickerNews extends RestResource
+{
     protected array $defaultParams
         = [
             'perPage' => 50,

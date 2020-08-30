@@ -6,7 +6,8 @@ namespace PolygonIO\Websockets;
  *
  * @package PolygonIO\websockets
  */
-class Websockets {
+class Websockets
+{
 
     /**
      * @var WebsocketResource

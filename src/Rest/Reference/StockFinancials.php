@@ -3,7 +3,8 @@ namespace PolygonIO\Rest\Reference;
 
 use PolygonIO\Rest\RestResource;
 
-class StockFinancials extends RestResource {
+class StockFinancials extends RestResource
+{
     protected array $defaultParams
         = [
             'limit' => 5,

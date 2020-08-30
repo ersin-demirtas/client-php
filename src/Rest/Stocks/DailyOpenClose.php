@@ -8,7 +8,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\rest\stocks
  */
-class DailyOpenClose extends RestResource {
+class DailyOpenClose extends RestResource
+{
 
     /**
      * @param $tickerSymbol

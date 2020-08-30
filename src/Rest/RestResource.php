@@ -1,7 +1,6 @@
 <?php
 namespace PolygonIO\Rest;
 
-
 use GuzzleHttp\Client;
 
 /**
@@ -9,7 +8,8 @@ use GuzzleHttp\Client;
  *
  * @package PolygonIO\rest
  */
-abstract class RestResource {
+abstract class RestResource
+{
 
     /**
      * @var Client
@@ -81,6 +81,6 @@ abstract class RestResource {
      */
     protected function mapper(array $response): array
     {
-       return $response;
+        return $response;
     }
 }

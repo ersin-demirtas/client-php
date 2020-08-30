@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Stocks
  */
-class HistoricTrades extends RestResource {
+class HistoricTrades extends RestResource
+{
 
     /**
      * @var array|int[]

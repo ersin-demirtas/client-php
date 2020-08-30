@@ -3,8 +3,8 @@ namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;
 
-class Exchanges extends RestResource {
-
+class Exchanges extends RestResource
+{
     protected string $route = '/v1/meta/exchanges';
 
     public function get()

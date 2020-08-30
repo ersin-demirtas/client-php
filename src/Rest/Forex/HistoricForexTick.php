@@ -3,7 +3,8 @@ namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\RestResource;
 
-class HistoricForexTick extends RestResource {
+class HistoricForexTick extends RestResource
+{
     protected array $defaultParams
         = [
             'limit' => 100,

@@ -3,7 +3,8 @@ namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\RestResource;
 
-class RealTimeCurrencyConversion extends RestResource {
+class RealTimeCurrencyConversion extends RestResource
+{
     protected array $defaultParams = [
                         'amount'    => 100,
                         'precision' => 2,

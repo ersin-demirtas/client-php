@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Stocks;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class PreviousClose extends RestResource {
+class PreviousClose extends RestResource
+{
     public function get($tickerSymbol, $params = [])
     {
         return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/prev', $params);

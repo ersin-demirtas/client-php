@@ -7,7 +7,8 @@ use PolygonIO\Rest\RestResource;
  * Class TickerTypes
  * @package PolygonIO\rest\reference
  */
-class TickerTypes extends RestResource {
+class TickerTypes extends RestResource
+{
     protected string $route = '/v2/reference/types';
 
     public function get()

@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Forex;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class SnapshotGainersLosers extends RestResource {
+class SnapshotGainersLosers extends RestResource
+{
     public function get($direction = 'gainers')
     {
         return $this->_get('/v2/snapshot/locale/global/markets/forex/'.$direction);

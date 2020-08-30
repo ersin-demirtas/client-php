@@ -11,7 +11,8 @@ use PolygonIO\Rest\Stocks\Stocks;
  *
  * @package PolygonIO\rest
  */
-class Rest {
+class Rest
+{
 
     /**
      * @var Reference

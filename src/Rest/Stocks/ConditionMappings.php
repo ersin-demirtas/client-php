@@ -8,7 +8,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\rest\stocks
  */
-class ConditionMappings extends RestResource {
+class ConditionMappings extends RestResource
+{
 
     /**
      * @param  string  $tickTypes

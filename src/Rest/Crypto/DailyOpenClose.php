@@ -9,7 +9,8 @@ use PolygonIO\Rest\RestResource;
  *
  * @package PolygonIO\Rest\Crypto
  */
-class DailyOpenClose extends RestResource {
+class DailyOpenClose extends RestResource
+{
 
     /**
      * @param  string  $from
@@ -33,13 +34,13 @@ class DailyOpenClose extends RestResource {
         if (array_key_exists('openTrades', $response)) {
             $response['openTrades'] = array_map(function ($result) {
                 return Mappers::cryptoTick($result);
-            },  $response['openTrades']);
+            }, $response['openTrades']);
         }
 
         if (array_key_exists('closingTrades', $response)) {
             $response['closingTrades'] = array_map(function ($result) {
                 return Mappers::cryptoTick($result);
-            },  $response['closingTrades']);
+            }, $response['closingTrades']);
         }
 
         return $response;

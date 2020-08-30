@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Crypto;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class SnapshotGainersLosers extends RestResource {
+class SnapshotGainersLosers extends RestResource
+{
 
     /**
      * @param  string  $direction

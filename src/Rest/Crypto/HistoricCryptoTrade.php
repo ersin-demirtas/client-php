@@ -4,7 +4,8 @@ namespace PolygonIO\Rest\Crypto;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
-class HistoricCryptoTrade extends RestResource {
+class HistoricCryptoTrade extends RestResource
+{
     protected array $defaultParams
         = [
             'limit' => 100,
@@ -17,7 +18,7 @@ class HistoricCryptoTrade extends RestResource {
 
     protected function mapper(array $response): array
     {
-        $response['ticks'] = array_map(function($tick) {
+        $response['ticks'] = array_map(function ($tick) {
             return Mappers::cryptoTick($tick);
         }, $response['ticks']);
         return $response;

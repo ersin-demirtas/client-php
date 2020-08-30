@@ -6,14 +6,15 @@ namespace PolygonIO\Rest\Common;
  *
  * @package PolygonIO\Rest
  */
-class Mappers {
+class Mappers
+{
 
     /**
      * @param  array  $tick
      *
      * @return array
      */
-    public static function quoteV1 (array $tick): array
+    public static function quoteV1(array $tick): array
     {
         $tick['condition'] = $tick['c'];
         $tick['bidExchange'] = $tick['bE'];
@@ -32,7 +33,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotQuote (array $quote): array
+    public static function snapshotQuote(array $quote): array
     {
         $quote['bidPrice'] = $quote['p'];
         $quote['bidSize'] = $quote['s'];
@@ -48,7 +49,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function tradeV1 (array $tick): array
+    public static function tradeV1(array $tick): array
     {
         $tick['condition1'] = $tick['c1'];
         $tick['condition2'] = $tick['c2'];
@@ -67,7 +68,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotAgg (array $snap): array
+    public static function snapshotAgg(array $snap): array
     {
         $snap['close'] =  $snap['c'];
         $snap['high'] =  $snap['h'];
@@ -83,7 +84,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotAggV2 (array $snap): array
+    public static function snapshotAggV2(array $snap): array
     {
         $snap['tickerSymbol'] = $snap['T'];
         $snap['volume'] = $snap['v'];
@@ -102,7 +103,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotTicker (array $snap): array
+    public static function snapshotTicker(array $snap): array
     {
         $snap['day'] = self::snapshotAgg($snap['day']);
         $snap['lastTrade'] = self::tradeV1($snap['lastTrade']);
@@ -118,7 +119,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function snapshotCryptoTicker (array $snap): array
+    public static function snapshotCryptoTicker(array $snap): array
     {
         $snap['day'] = self::snapshotAgg($snap['day']);
         $snap['lastTrade'] = self::cryptoTick($snap['lastTrade']);
@@ -149,7 +150,7 @@ class Mappers {
      *
      * @return array
      */
-    public static function cryptoSnapshotBookItem (array $item): array
+    public static function cryptoSnapshotBookItem(array $item): array
     {
         $item['price'] = $item['p'];
 
