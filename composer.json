@@ -7,7 +7,11 @@
         {
             "name": "Julien Prugne",
             "email": "julien@webeleon.dev"
-        }
+        },
+        {
+            "name": "Ersin Demirtas",
+            "email": "ed5@me.com"
+        }        `  
     ],
     "require": {
         "php": "^7.4",
