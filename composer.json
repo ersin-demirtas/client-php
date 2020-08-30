@@ -30,6 +30,7 @@
         "phan/phan": "^3.1"
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit"
+        "test": "./vendor/bin/phpunit",
+        "lint": "./vendor/bin/phan"
     }
 }

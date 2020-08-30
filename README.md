@@ -71,10 +71,10 @@ composer require
 
 Run the linter
 ```bash
-./vendor/bin/phplint .
+composer lint
 ```
 
 Run the tests
 ```
-./vendor/bin/phpunit
+composer test
 ```
