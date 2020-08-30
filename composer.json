@@ -1,5 +1,5 @@
 {
-    "name": "polygon-io/api",
+    "name": "ersindemirtas/polygonio-php-client",
     "description": "polygon.io php client",
     "type": "library",
     "license": "MIT",
