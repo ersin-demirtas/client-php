@@ -53,7 +53,7 @@ $client->websockets->crypto->connect($currencies, function($data) {
 
 ```
 
-## Developement
+## Development
 
 ### prerequisite
 
