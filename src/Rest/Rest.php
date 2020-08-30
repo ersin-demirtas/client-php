@@ -9,7 +9,7 @@ use PolygonIO\Rest\Stocks\Stocks;
 /**
  * Class Rest
  *
- * @package PolygonIO\rest
+ * @package PolygonIO\Rest
  */
 class Rest
 {
@@ -17,28 +17,29 @@ class Rest
     /**
      * @var Reference
      */
-    public $reference;
+    public Reference $reference;
 
     /**
      * @var Stocks
      */
-    public $stocks;
+    public Stocks $stocks;
 
     /**
      * @var Forex
      */
-    public $forex;
+    public Forex $forex;
 
     /**
      * @var Crypto
      */
-    public $crypto;
+    public Crypto $crypto;
 
     /**
      * Rest constructor.
-     * @param $apiKey
+     *
+     * @param  string  $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
         $this->reference = new Reference($apiKey);
         $this->stocks = new Stocks($apiKey);

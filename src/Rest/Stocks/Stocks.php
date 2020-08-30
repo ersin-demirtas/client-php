@@ -1,25 +1,35 @@
 <?php
 namespace PolygonIO\Rest\Stocks;
 
+/**
+ * Class Stocks
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class Stocks
 {
-    public $exchanges;
-    public $historicTrades;
-    public $historicTradesV2;
-    public $historicQuotes;
-    public $historicQuotesV2;
-    public $lastTradeForSymbol;
-    public $lastQuoteForSymbol;
-    public $dailyOpenClose;
-    public $conditionMappings;
-    public $snapshotAllTickers;
-    public $snapshotSingleTicker;
-    public $snapshotGainersLosers;
-    public $previousClose;
-    public $aggregates;
-    public $groupedDaily;
+    public Exchanges $exchanges;
+    public HistoricTrades $historicTrades;
+    public HistoricTradesV2 $historicTradesV2;
+    public HistoricQuotes $historicQuotes;
+    public HistoricQuotesV2 $historicQuotesV2;
+    public LastTradeForSymbol $lastTradeForSymbol;
+    public LastQuoteForSymbol $lastQuoteForSymbol;
+    public DailyOpenClose $dailyOpenClose;
+    public ConditionMappings $conditionMappings;
+    public SnapshotAllTickers $snapshotAllTickers;
+    public SnapshotSingleTicker $snapshotSingleTicker;
+    public SnapshotGainersLosers $snapshotGainersLosers;
+    public PreviousClose $previousClose;
+    public Aggregates $aggregates;
+    public GroupedDaily $groupedDaily;
 
-    public function __construct($apiKey)
+    /**
+     * Stocks constructor.
+     *
+     * @param  string  $apiKey
+     */
+    public function __construct(string $apiKey)
     {
         $this->exchanges = new Exchanges($apiKey);
         $this->historicTrades = new HistoricTrades($apiKey);

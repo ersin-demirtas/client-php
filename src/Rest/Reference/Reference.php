@@ -3,27 +3,29 @@ namespace PolygonIO\Rest\Reference;
 
 /**
  * Class Reference
- * @package PolygonIO\rest\reference
+ *
+ * @package PolygonIO\Rest\Reference
  */
 class Reference
 {
-    public $tickers;
-    public $tickerTypes;
-    public $tickerDetails;
-    public $tickerNews;
-    public $markets;
-    public $locales;
-    public $stockSplits;
-    public $stockDividends;
-    public $stockFinancials;
-    public $marketStatus;
-    public $marketHolidays;
+    public Tickers $tickers;
+    public TickerTypes $tickerTypes;
+    public TickerDetails $tickerDetails;
+    public TickerNews $tickerNews;
+    public Markets $markets;
+    public Locales $locales;
+    public StockSplits $stockSplits;
+    public StockDividends $stockDividends;
+    public StockFinancials $stockFinancials;
+    public MarketStatus $marketStatus;
+    public MarketHolidays $marketHolidays;
 
     /**
      * Reference constructor.
-     * @param $apiKey
+     *
+     * @param  string  $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
         $this->tickers = new Tickers($apiKey);
         $this->tickerTypes = new TickerTypes($apiKey);

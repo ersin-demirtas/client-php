@@ -4,11 +4,10 @@ namespace PolygonIO\Rest\Common;
 /**
  * Class Mappers
  *
- * @package PolygonIO\Rest
+ * @package PolygonIO\Rest\Common
  */
 class Mappers
 {
-
     /**
      * @param  array  $tick
      *

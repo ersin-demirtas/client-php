@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 /**
  * Class RestResource
  *
- * @package PolygonIO\rest
+ * @package PolygonIO\Rest
  */
 abstract class RestResource
 {
@@ -37,10 +37,11 @@ abstract class RestResource
     protected string $route;
 
     /**
-     * Polygon constructor.
-     * @param $apiKey
+     * RestResource constructor.
+     *
+     * @param  string  $apiKey
      */
-    public function __construct($apiKey)
+    public function __construct(string $apiKey)
     {
         $this->apiKey = $apiKey;
         $this->httpClient = new Client();
@@ -50,9 +51,9 @@ abstract class RestResource
      * @param  string  $route
      * @param  array  $params
      *
-     * @return mixed
+     * @return array
      */
-    protected function _get(string $route, array $params = [])
+    protected function _get(string $route, array $params = []): array
     {
         $enhancedParams =  array_merge(
             [
@@ -71,6 +72,7 @@ abstract class RestResource
 
         $bodyString = $response->getBody()->getContents();
         $json = json_decode($bodyString, true);
+
         return $this->mapper($json);
     }
 

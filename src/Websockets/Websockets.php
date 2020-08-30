@@ -4,7 +4,7 @@ namespace PolygonIO\Websockets;
 /**
  * Class Websockets
  *
- * @package PolygonIO\websockets
+ * @package PolygonIO\Websockets
  */
 class Websockets
 {

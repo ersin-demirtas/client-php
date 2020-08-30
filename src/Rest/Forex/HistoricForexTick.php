@@ -3,14 +3,29 @@ namespace PolygonIO\Rest\Forex;
 
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class HistoricForexTick
+ *
+ * @package PolygonIO\Rest\Forex
+ */
 class HistoricForexTick extends RestResource
 {
-    protected array $defaultParams
-        = [
-            'limit' => 100,
-        ];
+    /**
+     * @var array
+     */
+    protected array $defaultParams = [
+        'limit' => 100,
+    ];
 
-    public function get($from, $to, $date, $params = [])
+    /**
+     * @param  string  $from
+     * @param  string  $to
+     * @param  string  $date
+     * @param  array  $params
+     *
+     * @return array
+     */
+    public function get(string $from, string $to, string $date, array $params = [])
     {
         return $this->_get('/v1/historic/forex/'.$from.'/'.$to.'/'.$date, $params);
     }

@@ -4,6 +4,11 @@ namespace PolygonIO\Rest\Forex;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class Aggregates
+ *
+ * @package PolygonIO\Rest\Forex
+ */
 class Aggregates extends RestResource
 {
 

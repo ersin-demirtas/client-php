@@ -1,4 +1,5 @@
 <?php
+
 namespace PolygonIO\Rest\Crypto;
 
 use PolygonIO\Rest\Common\Mappers;
@@ -11,7 +12,6 @@ use PolygonIO\Rest\RestResource;
  */
 class DailyOpenClose extends RestResource
 {
-
     /**
      * @param  string  $from
      * @param  string  $to

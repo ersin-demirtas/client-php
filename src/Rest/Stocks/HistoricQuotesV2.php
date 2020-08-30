@@ -3,18 +3,37 @@ namespace PolygonIO\Rest\Stocks;
 
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class HistoricQuotesV2
+ *
+ * @package PolygonIO\Rest\Stocks
+ */
 class HistoricQuotesV2 extends RestResource
 {
+    /**
+     * @var array|int[]
+     */
     protected array $defaultParams
         = [
             'limit' => 100
         ];
 
-    public function get($tickerSymbol, $date)
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array
+     */
+    public function get(string $tickerSymbol, string $date): array
     {
         return $this->_get('/v2/ticks/stocks/nbbo/'.$tickerSymbol.'/'.$date);
     }
 
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
     protected function mapper(array $response): array
     {
         if ($response['results']) {

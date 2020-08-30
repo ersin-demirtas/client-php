@@ -5,10 +5,14 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class TickerNews
- * @package PolygonIO\rest\reference
+ *
+ * @package PolygonIO\Rest\Reference
  */
 class TickerNews extends RestResource
 {
+    /**
+     * @var array|int[]
+     */
     protected array $defaultParams
         = [
             'perPage' => 50,
@@ -16,11 +20,12 @@ class TickerNews extends RestResource
         ];
 
     /**
-     * @param $tickerSymbol
-     * @param $params
-     * @return mixed
+     * @param  string  $tickerSymbol
+     * @param  array  $params
+     *
+     * @return array|mixed
      */
-    public function get($tickerSymbol, $params = [])
+    public function get(string $tickerSymbol, array $params = [])
     {
         return $this->_get('/v1/meta/symbols/'.$tickerSymbol.'/news', $params);
     }

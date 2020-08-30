@@ -5,15 +5,17 @@ use PolygonIO\Rest\RestResource;
 
 /**
  * Class StockSplits
- * @package PolygonIO\rest\reference
+ *
+ * @package PolygonIO\Rest\Reference
  */
 class StockSplits extends RestResource
 {
     /**
-     * @param string $tickerSymbol
-     * @return mixed
+     * @param  string  $tickerSymbol
+     *
+     * @return array|mixed
      */
-    public function get($tickerSymbol)
+    public function get(string $tickerSymbol)
     {
         return $this->_get('/v2/reference/splits/'.$tickerSymbol);
     }

@@ -13,19 +13,19 @@ class HistoricTrades extends RestResource
 {
 
     /**
-     * @var array|int[]
+     * @var array
      */
     protected array $defaultParams = [
         'limit' => 100
     ];
 
     /**
-     * @param $tickerSymbol
-     * @param $date
+     * @param  string  $tickerSymbol
+     * @param  string  $date
      *
-     * @return array|mixed
+     * @return array
      */
-    public function get($tickerSymbol, $date)
+    public function get(string $tickerSymbol, string $date)
     {
         return $this->_get('/v1/historic/trades/'.$tickerSymbol.'/'.$date);
     }

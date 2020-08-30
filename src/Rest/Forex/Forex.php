@@ -1,18 +1,28 @@
 <?php
 namespace PolygonIO\Rest\Forex;
 
+/**
+ * Class Forex
+ *
+ * @package PolygonIO\Rest\Forex
+ */
 class Forex
 {
-    public $aggregates;
-    public $groupedDaily;
-    public $previousClose;
-    public $historicForexTick;
-    public $realTimeCurrencyConversion;
-    public $lastQuoteForCurrencyPair;
-    public $snapshotAllTickers;
-    public $snapshotGainersLosers;
+    public Aggregates $aggregates;
+    public GroupedDaily $groupedDaily;
+    public PreviousClose $previousClose;
+    public HistoricForexTick $historicForexTick;
+    public RealTimeCurrencyConversion $realTimeCurrencyConversion;
+    public LastQuoteForCurrencyPair $lastQuoteForCurrencyPair;
+    public SnapshotAllTickers $snapshotAllTickers;
+    public SnapshotGainersLosers $snapshotGainersLosers;
 
-    public function __construct($apiKey)
+    /**
+     * Forex constructor.
+     *
+     * @param  string  $apiKey
+     */
+    public function __construct(string $apiKey)
     {
         $this->groupedDaily = new GroupedDaily($apiKey);
         $this->aggregates = new Aggregates($apiKey);

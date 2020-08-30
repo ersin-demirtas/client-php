@@ -4,6 +4,11 @@ namespace PolygonIO\Rest\Crypto;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class PreviousClose
+ *
+ * @package PolygonIO\Rest\Crypto
+ */
 class PreviousClose extends RestResource
 {
 
@@ -13,11 +18,16 @@ class PreviousClose extends RestResource
      *
      * @return array|mixed
      */
-    public function get($tickerSymbol, $params = [])
+    public function get(string $tickerSymbol, array $params = [])
     {
         return $this->_get('/v2/aggs/ticker/'.$tickerSymbol.'/prev', $params);
     }
 
+    /**
+     * @param  array  $response
+     *
+     * @return array
+     */
     protected function mapper(array $response): array
     {
         $response['results'] = array_map(function ($result) {

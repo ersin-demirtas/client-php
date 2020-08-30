@@ -4,6 +4,11 @@ namespace PolygonIO\Rest\Crypto;
 use PolygonIO\Rest\Common\Mappers;
 use PolygonIO\Rest\RestResource;
 
+/**
+ * Class SnapshotGainersLosers
+ *
+ * @package PolygonIO\Rest\Crypto
+ */
 class SnapshotGainersLosers extends RestResource
 {
 
@@ -12,7 +17,7 @@ class SnapshotGainersLosers extends RestResource
      *
      * @return array|mixed
      */
-    public function get($direction = 'gainers')
+    public function get(string $direction = 'gainers')
     {
         return $this->_get('/v2/snapshot/locale/global/markets/crypto/'.$direction);
     }

@@ -6,7 +6,7 @@ use PolygonIO\Rest\RestResource;
 /**
  * Class ConditionMappings
  *
- * @package PolygonIO\rest\stocks
+ * @package PolygonIO\Rest\Stocks
  */
 class ConditionMappings extends RestResource
 {
@@ -14,9 +14,9 @@ class ConditionMappings extends RestResource
     /**
      * @param  string  $tickTypes
      *
-     * @return mixed
+     * @return array|mixed
      */
-    public function get($tickTypes = 'trades')
+    public function get(string $tickTypes = 'trades')
     {
         return $this->_get('/v1/meta/conditions/'.$tickTypes);
     }

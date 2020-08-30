@@ -1,6 +1,12 @@
 <?php
+
 namespace PolygonIO\Rest\Crypto;
 
+/**
+ * Class Crypto
+ *
+ * @package PolygonIO\Rest\Crypto
+ */
 class Crypto
 {
     public Aggregates $aggregates;

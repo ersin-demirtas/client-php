@@ -6,18 +6,18 @@ use PolygonIO\Rest\RestResource;
 /**
  * Class DailyOpenClose
  *
- * @package PolygonIO\rest\stocks
+ * @package PolygonIO\Rest\Stocks
  */
 class DailyOpenClose extends RestResource
 {
 
     /**
-     * @param $tickerSymbol
-     * @param $date
+     * @param  string  $tickerSymbol
+     * @param  string  $date
      *
-     * @return mixed
+     * @return array|mixed
      */
-    public function get($tickerSymbol, $date)
+    public function get(string $tickerSymbol, string $date)
     {
         return $this->_get('/v1/open-close/'.$tickerSymbol.'/'.$date);
     }

@@ -6,7 +6,7 @@ use Amp\Websocket;
 /**
  * Class WebsocketResource
  *
- * @package PolygonIO\websockets
+ * @package PolygonIO\Websockets
  */
 class WebsocketResource
 {
