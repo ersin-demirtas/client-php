@@ -33,7 +33,7 @@ $amount = 10;
 var_dump($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
 ```
 
-## Websockets
+## [Websockets](https://polygon.io/sockets)
 
 The websocket clients use the Amp event loop. 
 You can only use one websocket client by php thread since the event loop is in a blocking while loop.
