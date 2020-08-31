@@ -1,4 +1,5 @@
 # Polygon.io php api client
+This repository is a fork of polygon-io/client-php, the original repository is not been maintained properly so decided to maintain my own version. Feel free to contribute. 
 
 ## Installation guide
 
