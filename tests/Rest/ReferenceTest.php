@@ -1,20 +1,20 @@
 <?php
 
-namespace PolygonIO\Tests\Rest;
+namespace ErsinDemirtas\PolygonIOTests\Rest;
 
-use PolygonIO\Tests\TestCase;
-use PolygonIO\Rest\Reference\Reference;
-use PolygonIO\Rest\Reference\Tickers;
-use PolygonIO\Rest\Reference\TickerTypes;
-use PolygonIO\Rest\Reference\TickerDetails;
-use PolygonIO\Rest\Reference\TickerNews;
-use PolygonIO\Rest\Reference\Markets;
-use PolygonIO\Rest\Reference\Locales;
-use PolygonIO\Rest\Reference\StockSplits;
-use PolygonIO\Rest\Reference\StockDividends;
-use PolygonIO\Rest\Reference\StockFinancials;
-use PolygonIO\Rest\Reference\MarketStatus;
-use PolygonIO\Rest\Reference\MarketHolidays;
+use ErsinDemirtas\PolygonIOTests\TestCase;
+use ErsinDemirtas\PolygonIO\Rest\Reference\Reference;
+use ErsinDemirtas\PolygonIO\Rest\Reference\Tickers;
+use ErsinDemirtas\PolygonIO\Rest\Reference\TickerTypes;
+use ErsinDemirtas\PolygonIO\Rest\Reference\TickerDetails;
+use ErsinDemirtas\PolygonIO\Rest\Reference\TickerNews;
+use ErsinDemirtas\PolygonIO\Rest\Reference\Markets;
+use ErsinDemirtas\PolygonIO\Rest\Reference\Locales;
+use ErsinDemirtas\PolygonIO\Rest\Reference\StockSplits;
+use ErsinDemirtas\PolygonIO\Rest\Reference\StockDividends;
+use ErsinDemirtas\PolygonIO\Rest\Reference\StockFinancials;
+use ErsinDemirtas\PolygonIO\Rest\Reference\MarketStatus;
+use ErsinDemirtas\PolygonIO\Rest\Reference\MarketHolidays;
 
 class ReferenceTest extends TestCase
 {

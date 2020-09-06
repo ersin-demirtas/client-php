@@ -1,13 +1,13 @@
 <?php
-namespace PolygonIO\Rest\Stocks;
+namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
-use PolygonIO\Rest\Common\Mappers;
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\Common\Mappers;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class PreviousClose
  *
- * @package PolygonIO\Rest\Stocks
+ * @package ErsinDemirtas\PolygonIO\Rest\Stocks
  */
 class PreviousClose extends RestResource
 {

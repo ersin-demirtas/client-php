@@ -1,12 +1,12 @@
 <?php
-namespace PolygonIO\Rest\Stocks;
+namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class DailyOpenClose
  *
- * @package PolygonIO\Rest\Stocks
+ * @package ErsinDemirtas\PolygonIO\Rest\Stocks
  */
 class DailyOpenClose extends RestResource
 {

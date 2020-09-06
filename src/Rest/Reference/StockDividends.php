@@ -1,12 +1,12 @@
 <?php
-namespace PolygonIO\Rest\Reference;
+namespace ErsinDemirtas\PolygonIO\Rest\Reference;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class StockDividends
  *
- * @package PolygonIO\Rest\Reference
+ * @package ErsinDemirtas\PolygonIO\Rest\Reference
  */
 class StockDividends extends RestResource
 {

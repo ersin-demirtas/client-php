@@ -1,6 +1,6 @@
 <?php
 
-namespace PolygonIO\Rest\Crypto;
+namespace ErsinDemirtas\PolygonIO\Rest\Crypto;
 
 /**
  * Class Crypto

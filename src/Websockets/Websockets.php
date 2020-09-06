@@ -1,10 +1,10 @@
 <?php
-namespace PolygonIO\Websockets;
+namespace ErsinDemirtas\PolygonIO\Websockets;
 
 /**
  * Class Websockets
  *
- * @package PolygonIO\Websockets
+ * @package ErsinDemirtas\PolygonIO\Websockets
  */
 class Websockets
 {

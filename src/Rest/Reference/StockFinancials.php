@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\Rest\Reference;
+namespace ErsinDemirtas\PolygonIO\Rest\Reference;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class StockFinancials

@@ -1,13 +1,13 @@
 <?php
-namespace PolygonIO\Rest\Crypto;
+namespace ErsinDemirtas\PolygonIO\Rest\Crypto;
 
-use PolygonIO\Rest\Common\Mappers;
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\Common\Mappers;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class SnapshotSingleTickerFullBook
  *
- * @package PolygonIO\Rest\Crypto
+ * @package ErsinDemirtas\PolygonIO\Rest\Crypto
  */
 class SnapshotSingleTickerFullBook extends RestResource
 {

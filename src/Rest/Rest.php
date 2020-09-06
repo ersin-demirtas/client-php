@@ -1,10 +1,10 @@
 <?php
-namespace PolygonIO\Rest;
+namespace ErsinDemirtas\PolygonIO\Rest;
 
-use PolygonIO\Rest\Crypto\Crypto;
-use PolygonIO\Rest\Forex\Forex;
-use PolygonIO\Rest\Reference\Reference;
-use PolygonIO\Rest\Stocks\Stocks;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\Crypto;
+use ErsinDemirtas\PolygonIO\Rest\Forex\Forex;
+use ErsinDemirtas\PolygonIO\Rest\Reference\Reference;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\Stocks;
 
 /**
  * Class Rest

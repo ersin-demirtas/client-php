@@ -1,20 +1,20 @@
 <?php
 
-namespace PolygonIO\Tests\Rest;
+namespace ErsinDemirtas\PolygonIOTests\Rest;
 
-use PolygonIO\Tests\TestCase;
-use PolygonIO\Rest\Crypto\Crypto;
-use PolygonIO\Rest\Crypto\CryptoExchanges;
-use PolygonIO\Rest\Crypto\DailyOpenClose;
-use PolygonIO\Rest\Crypto\HistoricCryptoTrade;
-use PolygonIO\Rest\Crypto\LastTradeForCryptoPair;
-use PolygonIO\Rest\Crypto\SnapshotSingleTicker;
-use PolygonIO\Rest\Crypto\SnapshotSingleTickerFullBook;
-use PolygonIO\Rest\Crypto\Aggregates;
-use PolygonIO\Rest\Crypto\GroupedDaily;
-use PolygonIO\Rest\Crypto\PreviousClose;
-use PolygonIO\Rest\Crypto\SnapshotAllTickers;
-use PolygonIO\Rest\Crypto\SnapshotGainersLosers;
+use ErsinDemirtas\PolygonIOTests\TestCase;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\Crypto;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\CryptoExchanges;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\DailyOpenClose;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\HistoricCryptoTrade;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\LastTradeForCryptoPair;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\SnapshotSingleTicker;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\SnapshotSingleTickerFullBook;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\Aggregates;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\GroupedDaily;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\PreviousClose;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\SnapshotAllTickers;
+use ErsinDemirtas\PolygonIO\Rest\Crypto\SnapshotGainersLosers;
 
 class CryptoTest extends TestCase
 {

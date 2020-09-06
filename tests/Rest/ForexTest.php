@@ -1,17 +1,17 @@
 <?php
 
-namespace PolygonIO\Tests\Rest;
+namespace ErsinDemirtas\PolygonIOTests\Rest;
 
-use PolygonIO\Tests\TestCase;
-use PolygonIO\Rest\Forex\Aggregates;
-use PolygonIO\Rest\Forex\Forex;
-use PolygonIO\Rest\Forex\GroupedDaily;
-use PolygonIO\Rest\Forex\HistoricForexTick;
-use PolygonIO\Rest\Forex\LastQuoteForCurrencyPair;
-use PolygonIO\Rest\Forex\PreviousClose;
-use PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
-use PolygonIO\Rest\Forex\SnapshotAllTickers;
-use PolygonIO\Rest\Forex\SnapshotGainersLosers;
+use ErsinDemirtas\PolygonIOTests\TestCase;
+use ErsinDemirtas\PolygonIO\Rest\Forex\Aggregates;
+use ErsinDemirtas\PolygonIO\Rest\Forex\Forex;
+use ErsinDemirtas\PolygonIO\Rest\Forex\GroupedDaily;
+use ErsinDemirtas\PolygonIO\Rest\Forex\HistoricForexTick;
+use ErsinDemirtas\PolygonIO\Rest\Forex\LastQuoteForCurrencyPair;
+use ErsinDemirtas\PolygonIO\Rest\Forex\PreviousClose;
+use ErsinDemirtas\PolygonIO\Rest\Forex\RealTimeCurrencyConversion;
+use ErsinDemirtas\PolygonIO\Rest\Forex\SnapshotAllTickers;
+use ErsinDemirtas\PolygonIO\Rest\Forex\SnapshotGainersLosers;
 
 class ForexTest extends TestCase
 {

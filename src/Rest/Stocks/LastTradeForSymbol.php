@@ -1,12 +1,12 @@
 <?php
-namespace PolygonIO\Rest\Stocks;
+namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class LastTradeForSymbol
  *
- * @package PolygonIO\Rest\Stocks
+ * @package Ersindemirtas\PolygonIO\Rest\Stocks
  */
 class LastTradeForSymbol extends RestResource
 {

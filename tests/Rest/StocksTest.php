@@ -1,24 +1,24 @@
 <?php
 
-namespace PolygonIO\Tests\Rest;
+namespace ErsinDemirtas\PolygonIOTests\Rest;
 
-use PolygonIO\Tests\TestCase;
-use PolygonIO\Rest\Stocks\Stocks;
-use PolygonIO\Rest\Stocks\Exchanges;
-use PolygonIO\Rest\Stocks\HistoricTrades;
-use PolygonIO\Rest\Stocks\HistoricTradesV2;
-use PolygonIO\Rest\Stocks\HistoricQuotes;
-use PolygonIO\Rest\Stocks\HistoricQuotesV2;
-use PolygonIO\Rest\Stocks\LastTradeForSymbol;
-use PolygonIO\Rest\Stocks\LastQuoteForSymbol;
-use PolygonIO\Rest\Stocks\DailyOpenClose;
-use PolygonIO\Rest\Stocks\ConditionMappings;
-use PolygonIO\Rest\Stocks\SnapshotAllTickers;
-use PolygonIO\Rest\Stocks\SnapshotSingleTicker;
-use PolygonIO\Rest\Stocks\SnapshotGainersLosers;
-use PolygonIO\Rest\Stocks\PreviousClose;
-use PolygonIO\Rest\Stocks\Aggregates;
-use PolygonIO\Rest\Stocks\GroupedDaily;
+use ErsinDemirtas\PolygonIOTests\TestCase;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\Stocks;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\Exchanges;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\HistoricTrades;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\HistoricTradesV2;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\HistoricQuotes;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\HistoricQuotesV2;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\LastTradeForSymbol;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\LastQuoteForSymbol;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\DailyOpenClose;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\ConditionMappings;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\SnapshotAllTickers;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\SnapshotSingleTicker;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\SnapshotGainersLosers;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\PreviousClose;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\Aggregates;
+use ErsinDemirtas\PolygonIO\Rest\Stocks\GroupedDaily;
 
 class StocksTest extends TestCase
 {

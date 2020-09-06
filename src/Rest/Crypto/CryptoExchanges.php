@@ -1,13 +1,13 @@
 <?php
 
-namespace PolygonIO\Rest\Crypto;
+namespace ErsinDemirtas\PolygonIO\Rest\Crypto;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class CryptoExchanges
  *
- * @package PolygonIO\Rest\Crypto
+ * @package Ersindemirtas\PolygonIO\Rest\Crypto
  */
 class CryptoExchanges extends RestResource
 {

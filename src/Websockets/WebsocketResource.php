@@ -1,12 +1,12 @@
 <?php
-namespace PolygonIO\Websockets;
+namespace ErsinDemirtas\PolygonIO\Websockets;
 
 use Amp\Websocket;
 
 /**
  * Class WebsocketResource
  *
- * @package PolygonIO\Websockets
+ * @package ErsinDemirtas\PolygonIO\Websockets
  */
 class WebsocketResource
 {

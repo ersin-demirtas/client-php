@@ -1,6 +1,6 @@
 <?php
 
-namespace PolygonIO\Tests;
+namespace ErsinDemirtas\PolygonIOTests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {
-
     /**
      * @param $requestsContainer
      * @param  array  $response

@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\Rest\Forex;
+namespace ErsinDemirtas\PolygonIO\Rest\Forex;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class RealTimeCurrencyConversion

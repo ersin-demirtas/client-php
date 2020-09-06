@@ -1,7 +1,7 @@
 <?php
-namespace PolygonIO\Rest\Stocks;
+namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
-use PolygonIO\Rest\RestResource;
+use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
  * Class Exchanges

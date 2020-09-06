@@ -1,42 +1,42 @@
 <?php
 
-namespace PolygonIO\Tests\Rest\Common;
+namespace ErsinDemirtas\PolygonIOTests\Rest\Common;
 
-use PolygonIO\Tests\TestCase;
-use PolygonIO\Rest\Common\Mappers;
+use ErsinDemirtas\PolygonIOTests\TestCase;
+use ErsinDemirtas\PolygonIO\Rest\Common\Mappers;
 
 class MappersTest extends TestCase
 {
     public function testQuoteV1()
     {
         $tickData = [
-            'c' => 'a',
+            'c'  => 'a',
             'bE' => 'b',
             'aE' => 'c',
             'aP' => 'd',
             'bP' => 'e',
             'bS' => 'f',
             'aS' => 'g',
-            't' => 'h'
+            't'  => 'h'
         ];
 
         $expected = [
-            'condition' => 'a',
+            'condition'   => 'a',
             'bidExchange' => 'b',
             'askExchange' => 'c',
-            'askPrice' => 'd',
-            'buyPrice' => 'e',
-            'bidSize' => 'f',
-            'askSize' => 'g',
-            'timestamp' => 'h',
-            'c' => 'a',
-            'bE' => 'b',
-            'aE' => 'c',
-            'aP' => 'd',
-            'bP' => 'e',
-            'bS' => 'f',
-            'aS' => 'g',
-            't' => 'h'
+            'askPrice'    => 'd',
+            'buyPrice'    => 'e',
+            'bidSize'     => 'f',
+            'askSize'     => 'g',
+            'timestamp'   => 'h',
+            'c'           => 'a',
+            'bE'          => 'b',
+            'aE'          => 'c',
+            'aP'          => 'd',
+            'bP'          => 'e',
+            'bS'          => 'f',
+            'aS'          => 'g',
+            't'           => 'h'
         ];
 
         $actualData = Mappers::quoteV1($tickData);
@@ -56,16 +56,16 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'bidPrice' => 'a',
-            'bidSize' => 'b',
-            'askPrice' => 'c',
-            'askSize' => 'd',
+            'bidPrice'            => 'a',
+            'bidSize'             => 'b',
+            'askPrice'            => 'c',
+            'askSize'             => 'd',
             'lastUpdateTimestamp' => 'e',
-            'p' => 'a',
-            's' => 'b',
-            'P' => 'c',
-            'S' => 'd',
-            't' => 'e',
+            'p'                   => 'a',
+            's'                   => 'b',
+            'P'                   => 'c',
+            'S'                   => 'd',
+            't'                   => 'e',
         ];
 
         $actualData = Mappers::snapshotQuote($tickData);
@@ -81,10 +81,10 @@ class MappersTest extends TestCase
             'c2' => 'b',
             'c3' => 'c',
             'c4' => 'd',
-            'e' => 'e',
-            'p' => 'f',
-            's' => 'g',
-            't' => 'h',
+            'e'  => 'e',
+            'p'  => 'f',
+            's'  => 'g',
+            't'  => 'h',
         ];
 
         $expected = [
@@ -92,18 +92,18 @@ class MappersTest extends TestCase
             'condition2' => 'b',
             'condition3' => 'c',
             'condition4' => 'd',
-            'exchange' => 'e',
-            'price' => 'f',
-            'size' => 'g',
-            'timestamp' => 'h',
-            'c1' => 'a',
-            'c2' => 'b',
-            'c3' => 'c',
-            'c4' => 'd',
-            'e' => 'e',
-            'p' => 'f',
-            's' => 'g',
-            't' => 'h',
+            'exchange'   => 'e',
+            'price'      => 'f',
+            'size'       => 'g',
+            'timestamp'  => 'h',
+            'c1'         => 'a',
+            'c2'         => 'b',
+            'c3'         => 'c',
+            'c4'         => 'd',
+            'e'          => 'e',
+            'p'          => 'f',
+            's'          => 'g',
+            't'          => 'h',
         ];
 
         $actualData = Mappers::tradeV1($tickData);
@@ -123,16 +123,16 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'close' => 'a',
-            'high' => 'b',
-            'low' => 'c',
-            'open' => 'd',
+            'close'  => 'a',
+            'high'   => 'b',
+            'low'    => 'c',
+            'open'   => 'd',
             'volume' => 'e',
-            'c' => 'a',
-            'h' => 'b',
-            'l' => 'c',
-            'o' => 'd',
-            'v' => 'e',
+            'c'      => 'a',
+            'h'      => 'b',
+            'l'      => 'c',
+            'o'      => 'd',
+            'v'      => 'e',
         ];
 
         $actualData = Mappers::snapshotAgg($snapData);
@@ -155,22 +155,22 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'tickerSymbol' => 'a',
-            'volume' => 'b',
-            'open' => 'c',
-            'close' => 'd',
-            'high' => 'e',
-            'low' => 'f',
-            'timestamp' => 'g',
+            'tickerSymbol'  => 'a',
+            'volume'        => 'b',
+            'open'          => 'c',
+            'close'         => 'd',
+            'high'          => 'e',
+            'low'           => 'f',
+            'timestamp'     => 'g',
             'numberOfItems' => 'h',
-            'T' => 'a',
-            'v' => 'b',
-            'o' => 'c',
-            'c' => 'd',
-            'h' => 'e',
-            'l' => 'f',
-            't' => 'g',
-            'n' => 'h',
+            'T'             => 'a',
+            'v'             => 'b',
+            'o'             => 'c',
+            'c'             => 'd',
+            'h'             => 'e',
+            'l'             => 'f',
+            't'             => 'g',
+            'n'             => 'h',
         ];
 
         $actualData = Mappers::snapshotAggV2($snapData);
@@ -182,7 +182,7 @@ class MappersTest extends TestCase
     public function testSnapshotTicker()
     {
         $snapData = [
-            'day' => [
+            'day'       => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
@@ -194,10 +194,10 @@ class MappersTest extends TestCase
                 'c2' => 'b',
                 'c3' => 'c',
                 'c4' => 'd',
-                'e' => 'e',
-                'p' => 'f',
-                's' => 'g',
-                't' => 'h',
+                'e'  => 'e',
+                'p'  => 'f',
+                's'  => 'g',
+                't'  => 'h',
             ],
             'lastQuote' => [
                 'p' => 'a',
@@ -206,14 +206,14 @@ class MappersTest extends TestCase
                 'S' => 'd',
                 't' => 'e',
             ],
-            'min' => [
+            'min'       => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
                 'o' => 'd',
                 'v' => 'e',
             ],
-            'prevDay' => [
+            'prevDay'   => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
@@ -223,71 +223,71 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'day' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'day'       => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ],
             'lastTrade' => [
                 'condition1' => 'a',
                 'condition2' => 'b',
                 'condition3' => 'c',
                 'condition4' => 'd',
-                'exchange' => 'e',
-                'price' => 'f',
-                'size' => 'g',
-                'timestamp' => 'h',
-                'c1' => 'a',
-                'c2' => 'b',
-                'c3' => 'c',
-                'c4' => 'd',
-                'e' => 'e',
-                'p' => 'f',
-                's' => 'g',
-                't' => 'h',
+                'exchange'   => 'e',
+                'price'      => 'f',
+                'size'       => 'g',
+                'timestamp'  => 'h',
+                'c1'         => 'a',
+                'c2'         => 'b',
+                'c3'         => 'c',
+                'c4'         => 'd',
+                'e'          => 'e',
+                'p'          => 'f',
+                's'          => 'g',
+                't'          => 'h',
             ],
             'lastQuote' => [
-                'bidPrice' => 'a',
-                'bidSize' => 'b',
-                'askPrice' => 'c',
-                'askSize' => 'd',
+                'bidPrice'            => 'a',
+                'bidSize'             => 'b',
+                'askPrice'            => 'c',
+                'askSize'             => 'd',
                 'lastUpdateTimestamp' => 'e',
-                'p' => 'a',
-                's' => 'b',
-                'P' => 'c',
-                'S' => 'd',
-                't' => 'e',
+                'p'                   => 'a',
+                's'                   => 'b',
+                'P'                   => 'c',
+                'S'                   => 'd',
+                't'                   => 'e',
             ],
-            'min' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'min'       => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ],
-            'prevDay' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'prevDay'   => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ]
         ];
 
@@ -300,7 +300,7 @@ class MappersTest extends TestCase
     public function testSnapshotCryptoTicker()
     {
         $tickData = [
-            'day' => [
+            'day'       => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
@@ -314,14 +314,14 @@ class MappersTest extends TestCase
                 'c' => 'd',
                 't' => 'e',
             ],
-            'min' => [
+            'min'       => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
                 'o' => 'd',
                 'v' => 'e',
             ],
-            'prevDay' => [
+            'prevDay'   => [
                 'c' => 'a',
                 'h' => 'b',
                 'l' => 'c',
@@ -331,53 +331,53 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'day' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'day'       => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ],
             'lastTrade' => [
-                'p' => 'a',
-                's' => 'b',
-                'x' => 'c',
-                'c' => 'd',
-                't' => 'e',
-                'price' => 'a',
-                'size' => 'b',
-                'exchange' => 'c',
+                'p'          => 'a',
+                's'          => 'b',
+                'x'          => 'c',
+                'c'          => 'd',
+                't'          => 'e',
+                'price'      => 'a',
+                'size'       => 'b',
+                'exchange'   => 'c',
                 'conditions' => 'd',
-                'timestamp' => 'e'
+                'timestamp'  => 'e'
             ],
-            'min' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'min'       => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ],
-            'prevDay' => [
-                'close' => 'a',
-                'high' => 'b',
-                'low' => 'c',
-                'open' => 'd',
+            'prevDay'   => [
+                'close'  => 'a',
+                'high'   => 'b',
+                'low'    => 'c',
+                'open'   => 'd',
                 'volume' => 'e',
-                'c' => 'a',
-                'h' => 'b',
-                'l' => 'c',
-                'o' => 'd',
-                'v' => 'e',
+                'c'      => 'a',
+                'h'      => 'b',
+                'l'      => 'c',
+                'o'      => 'd',
+                'v'      => 'e',
             ]
         ];
 
@@ -398,16 +398,16 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'p' => 'a',
-            's' => 'b',
-            'x' => 'c',
-            'c' => 'd',
-            't' => 'e',
-            'price' => 'a',
-            'size' => 'b',
-            'exchange' => 'c',
+            'p'          => 'a',
+            's'          => 'b',
+            'x'          => 'c',
+            'c'          => 'd',
+            't'          => 'e',
+            'price'      => 'a',
+            'size'       => 'b',
+            'exchange'   => 'c',
             'conditions' => 'd',
-            'timestamp' => 'e'
+            'timestamp'  => 'e'
         ];
 
         $actualData = Mappers::cryptoTick($snapData);
@@ -423,7 +423,7 @@ class MappersTest extends TestCase
         ];
 
         $expected = [
-            'p' => 'a',
+            'p'     => 'a',
             'price' => 'a',
         ];
 

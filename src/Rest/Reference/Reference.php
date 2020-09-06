@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\Rest\Reference;
+namespace ErsinDemirtas\PolygonIO\Rest\Reference;
 
 /**
  * Class Reference

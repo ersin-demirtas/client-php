@@ -1,5 +1,5 @@
 <?php
-namespace PolygonIO\Rest;
+namespace ErsinDemirtas\PolygonIO\Rest;
 
 use GuzzleHttp\Client;
 

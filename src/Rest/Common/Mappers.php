@@ -1,10 +1,11 @@
 <?php
-namespace PolygonIO\Rest\Common;
+
+namespace ErsinDemirtas\PolygonIO\Rest\Common;
 
 /**
  * Class Mappers
  *
- * @package PolygonIO\Rest\Common
+ * @package ErsinDemirtas\PolygonIO\Rest\Common
  */
 class Mappers
 {

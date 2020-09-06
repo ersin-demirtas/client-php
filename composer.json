@@ -21,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PolygonIO\\": "src/"
+            "ErsinDemirtas\\PolygonIO\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PolygonIO\\Tests\\": "tests/"
+            "ErsinDemirtas\\PolygonIOTests\\": "tests/"
         }
     },
     "require-dev": {

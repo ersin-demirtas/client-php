@@ -1,10 +1,10 @@
 <?php
-namespace PolygonIO\Rest\Stocks;
+namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
 /**
  * Class Stocks
  *
- * @package PolygonIO\Rest\Stocks
+ * @package Ersindemirtas\PolygonIO\Rest\Stocks
  */
 class Stocks
 {

@@ -1,13 +1,14 @@
 <?php
-namespace PolygonIO;
 
-use PolygonIO\Rest\Rest;
-use PolygonIO\Websockets\Websockets;
+namespace ErsinDemirtas\PolygonIO;
+
+use ErsinDemirtas\PolygonIO\Rest\Rest;
+use ErsinDemirtas\PolygonIO\Websockets\Websockets;
 
 /**
  * Class PolygonIO
  *
- * @package PolygonIO
+ * @package ErsinDemirtas\PolygonIO
  */
 class PolygonIO
 {
