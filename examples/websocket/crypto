@@ -11,7 +11,7 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$client = new PolygonIO\PolygonIO('API_KEY');
+$client = new ErsinDemirtas\PolygonIO\PolygonIO('API_KEY');
 
 $currencies = ['XQ.BTC-USD'];
 
