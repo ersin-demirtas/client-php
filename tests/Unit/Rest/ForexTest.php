@@ -15,18 +15,27 @@ use ErsinDemirtas\PolygonIO\Rest\Forex\SnapshotGainersLosers;
 
 class ForexTest extends TestCase
 {
+
+    private Forex $forex;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->forex = new Forex('API_KEY_000_111');
+    }
+
+
     public function testExportAllMethodsFromStocksApi()
     {
-        $forex = new Forex('fake api key');
-
-        $this->assertInstanceOf(Aggregates::class, $forex->aggregates);
-        $this->assertInstanceOf(GroupedDaily::class, $forex->groupedDaily);
-        $this->assertInstanceOf(PreviousClose::class, $forex->previousClose);
-        $this->assertInstanceOf(HistoricForexTick::class, $forex->historicForexTick);
-        $this->assertInstanceOf(RealTimeCurrencyConversion::class, $forex->realTimeCurrencyConversion);
-        $this->assertInstanceOf(LastQuoteForCurrencyPair::class, $forex->lastQuoteForCurrencyPair);
-        $this->assertInstanceOf(SnapshotGainersLosers::class, $forex->snapshotGainersLosers);
-        $this->assertInstanceOf(SnapshotAllTickers::class, $forex->snapshotAllTickers);
+        $this->assertInstanceOf(Aggregates::class, $this->forex->aggregates());
+        $this->assertInstanceOf(GroupedDaily::class, $this->forex->groupedDaily());
+        $this->assertInstanceOf(PreviousClose::class, $this->forex->previousClose());
+        $this->assertInstanceOf(HistoricForexTick::class, $this->forex->historicForexTick());
+        $this->assertInstanceOf(RealTimeCurrencyConversion::class, $this->forex->realTimeCurrencyConversion());
+        $this->assertInstanceOf(LastQuoteForCurrencyPair::class, $this->forex->lastQuoteForCurrencyPair());
+        $this->assertInstanceOf(SnapshotGainersLosers::class, $this->forex->snapshotGainersLosers());
+        $this->assertInstanceOf(SnapshotAllTickers::class, $this->forex->snapshotAllTickers());
     }
 
     public function testPreviousCloseGetCall()

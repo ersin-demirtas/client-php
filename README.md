@@ -29,9 +29,9 @@ The `ErsinDemirtas\PolygonIO\Rest\Rest` class export 4 modules:
 require __DIR__ . '/vendor/autoload.php';
 
 $client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
+$forex = $client->rest()->forex();
 
-$amount = 10;
-var_dump($client->rest()->forex()->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
+var_dump($forex->realTimeCurrencyConversion('USD', 'EUR'));
 ```
 
 ## [Websockets](https://polygon.io/sockets)
@@ -43,11 +43,11 @@ The WebSocket clients use the Amp event loop. You can only use one WebSocket cli
 
 require __DIR__ . '/vendor/autoload.php';
 
-$client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
+$client = (new ErsinDemirtas\PolygonIO\Client('API_KEY'))->websockets();
 
 $currencies = ['XQ.BTC-USD'];
 
-$client->websockets()->crypto()->connect($currencies, function($data) {
+$client->crypto()->connect($currencies, function($data) {
     var_dump($data);
 });
 

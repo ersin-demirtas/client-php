@@ -11,7 +11,6 @@ use ErsinDemirtas\PolygonIO\Rest\RestResource;
  */
 class Aggregates extends RestResource
 {
-
     /**
      * @param  string  $tickerSymbol
      * @param  string  $multiplier

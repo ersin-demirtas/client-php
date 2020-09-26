@@ -9,6 +9,13 @@ namespace ErsinDemirtas\PolygonIO\Rest\Common;
  */
 class Mappers
 {
+    const TIMESTAMP = 'timestamp';
+    const PRICE = 'price';
+    const LAST_TRADE = 'lastTrade';
+    const PRED_DAY = 'prevDay';
+    const OPEN_TRADES = 'openTrades';
+    const CLOSING_TRADES = 'closingTrades';
+
     /**
      * @param  array  $tick
      *
@@ -23,7 +30,7 @@ class Mappers
         $tick['buyPrice'] = $tick['bP'];
         $tick['bidSize'] = $tick['bS'];
         $tick['askSize'] = $tick['aS'];
-        $tick['timestamp'] = $tick['t'];
+        $tick[self::TIMESTAMP] = $tick['t'];
 
         return $tick;
     }
@@ -56,9 +63,9 @@ class Mappers
         $tick['condition3'] = $tick['c3'];
         $tick['condition4'] = $tick['c4'];
         $tick['exchange'] = $tick['e'];
-        $tick['price'] = $tick['p'];
+        $tick[self::PRICE] = $tick['p'];
         $tick['size'] = $tick['s'];
-        $tick['timestamp'] = $tick['t'];
+        $tick[self::TIMESTAMP] = $tick['t'];
 
         return $tick;
     }
@@ -92,7 +99,7 @@ class Mappers
         $snap['close'] = $snap['c'];
         $snap['high'] = $snap['h'];
         $snap['low'] = $snap['l'];
-        $snap['timestamp'] = $snap['t'];
+        $snap[self::TIMESTAMP] = $snap['t'];
         $snap['numberOfItems'] = $snap['n'];
 
         return $snap;
@@ -106,10 +113,10 @@ class Mappers
     public static function snapshotTicker(array $snap): array
     {
         $snap['day'] = self::snapshotAgg($snap['day']);
-        $snap['lastTrade'] = self::tradeV1($snap['lastTrade']);
+        $snap[self::LAST_TRADE] = self::tradeV1($snap[self::LAST_TRADE]);
         $snap['lastQuote'] = self::snapshotQuote($snap['lastQuote']);
         $snap['min'] = self::snapshotAgg($snap['min']);
-        $snap['prevDay'] = self::snapshotAgg($snap['prevDay']);
+        $snap[self::PRED_DAY] = self::snapshotAgg($snap[self::PRED_DAY]);
 
         return $snap;
     }
@@ -122,9 +129,9 @@ class Mappers
     public static function snapshotCryptoTicker(array $snap): array
     {
         $snap['day'] = self::snapshotAgg($snap['day']);
-        $snap['lastTrade'] = self::cryptoTick($snap['lastTrade']);
+        $snap[self::LAST_TRADE] = self::cryptoTick($snap[self::LAST_TRADE]);
         $snap['min'] = self::snapshotAgg($snap['min']);
-        $snap['prevDay'] = self::snapshotAgg($snap['prevDay']);
+        $snap[self::PRED_DAY] = self::snapshotAgg($snap[self::PRED_DAY]);
 
         return $snap;
     }
@@ -136,11 +143,11 @@ class Mappers
      */
     public static function cryptoTick(array $tick): array
     {
-        $tick['price'] = $tick['p'];
+        $tick[self::PRICE] = $tick['p'];
         $tick['size'] = $tick['s'];
         $tick['exchange'] = $tick['x'];
         $tick['conditions'] = $tick['c'];
-        $tick['timestamp'] = $tick['t'];
+        $tick[self::TIMESTAMP] = $tick['t'];
 
         return $tick;
     }
@@ -152,7 +159,7 @@ class Mappers
      */
     public static function cryptoSnapshotBookItem(array $item): array
     {
-        $item['price'] = $item['p'];
+        $item[self::PRICE] = $item['p'];
 
         return $item;
     }

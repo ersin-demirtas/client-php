@@ -10,8 +10,8 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
-$forex = $client->websockets()->forex();
+$client = (new ErsinDemirtas\PolygonIO\Client('API_KEY'))->websockets();
+$forex = $client->forex();
 
 $currencies = ['C.USD'];
 

@@ -8,14 +8,7 @@ namespace ErsinDemirtas\PolygonIO\Rest\Forex;
  */
 class Forex
 {
-    public Aggregates $aggregates;
-    public GroupedDaily $groupedDaily;
-    public PreviousClose $previousClose;
-    public HistoricForexTick $historicForexTick;
-    public RealTimeCurrencyConversion $realTimeCurrencyConversion;
-    public LastQuoteForCurrencyPair $lastQuoteForCurrencyPair;
-    public SnapshotAllTickers $snapshotAllTickers;
-    public SnapshotGainersLosers $snapshotGainersLosers;
+    public string $apiKey;
 
     /**
      * Forex constructor.
@@ -24,13 +17,99 @@ class Forex
      */
     public function __construct(string $apiKey)
     {
-        $this->groupedDaily = new GroupedDaily($apiKey);
-        $this->aggregates = new Aggregates($apiKey);
-        $this->previousClose = new PreviousClose($apiKey);
-        $this->historicForexTick = new HistoricForexTick($apiKey);
-        $this->realTimeCurrencyConversion = new RealTimeCurrencyConversion($apiKey);
-        $this->lastQuoteForCurrencyPair = new LastQuoteForCurrencyPair($apiKey);
-        $this->snapshotAllTickers = new SnapshotAllTickers($apiKey);
-        $this->snapshotGainersLosers = new SnapshotGainersLosers($apiKey);
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @param  string  $date
+     * @param  string  $locale
+     * @param  string  $market
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function groupedDaily(string $date, string $locale = 'US', string $market = 'FX', array $params = [])
+    {
+        return (new GroupedDaily($this->apiKey))->get($date, $locale, $market, $params);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $multiplier
+     * @param  string  $from
+     * @param  string  $to
+     * @param  string  $timespan
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function aggregates(string $tickerSymbol, string $multiplier, string $from, string $to, string $timespan = 'days', array $params = [])
+    {
+        return (new Aggregates($this->apiKey))->get($tickerSymbol, $multiplier, $from, $to, $timespan, $params);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function previousClose(string $tickerSymbol, array $params = [])
+    {
+        return (new PreviousClose($this->apiKey))->get($tickerSymbol, $params = []);
+    }
+
+    /**
+     * @param  string  $from
+     * @param  string  $to
+     * @param  string  $date
+     * @param  array  $params
+     *
+     * @return array
+     */
+    public function historicForexTick(string $from, string $to, string $date, array $params = [])
+    {
+        return (new HistoricForexTick($this->apiKey))->get($from, $to, $date, $params);
+    }
+
+    /**
+     * @param  string  $from
+     * @param  string  $to
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function realTimeCurrencyConversion(string $from, string $to, array $params = [])
+    {
+        return (new RealTimeCurrencyConversion($this->apiKey))->get($from, $to, $params);
+    }
+
+    /**
+     * @param  string  $from
+     * @param  string  $to
+     *
+     * @return array|mixed
+     */
+    public function lastQuoteForCurrencyPair(string $from, string $to)
+    {
+        return (new LastQuoteForCurrencyPair($this->apiKey))->get($from, $to);
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function snapshotAllTickers()
+    {
+        return (new SnapshotAllTickers($this->apiKey))->get();
+    }
+
+    /**
+     * @param  string  $direction
+     *
+     * @return array|mixed
+     */
+    public function snapshotGainersLosers(string $direction = 'gainers')
+    {
+        return (new SnapshotGainersLosers($this->apiKey))->get($direction);
     }
 }

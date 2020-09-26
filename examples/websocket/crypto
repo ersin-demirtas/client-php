@@ -11,8 +11,8 @@
 
 require __DIR__ . '/../../vendor/autoload.php';
 
-$client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
-$crypto = $client->websockets()->crypto();
+$client = (new ErsinDemirtas\PolygonIO\Client('API_KEY'))->websockets();
+$crypto = $client->crypto();
 
 $currencies = ['XQ.BTC-USD'];
 

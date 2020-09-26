@@ -31,16 +31,16 @@ class DailyOpenClose extends RestResource
      */
     protected function mapper(array $response): array
     {
-        if (array_key_exists('openTrades', $response)) {
-            $response['openTrades'] = array_map(function ($result) {
+        if (array_key_exists(Mappers::OPEN_TRADES, $response)) {
+            $response[Mappers::OPEN_TRADES] = array_map(function ($result) {
                 return Mappers::cryptoTick($result);
-            }, $response['openTrades']);
+            }, $response[Mappers::OPEN_TRADES]);
         }
 
-        if (array_key_exists('closingTrades', $response)) {
-            $response['closingTrades'] = array_map(function ($result) {
+        if (array_key_exists(Mappers::CLOSING_TRADES, $response)) {
+            $response[Mappers::CLOSING_TRADES] = array_map(function ($result) {
                 return Mappers::cryptoTick($result);
-            }, $response['closingTrades']);
+            }, $response[Mappers::CLOSING_TRADES]);
         }
 
         return $response;
