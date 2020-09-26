@@ -1,6 +1,6 @@
 <?php
 
-namespace ErsinDemirtas\PolygonIOTests\Rest;
+namespace ErsinDemirtas\PolygonIOTests\Unit\Rest;
 
 use ErsinDemirtas\PolygonIOTests\TestCase;
 use ErsinDemirtas\PolygonIO\Rest\Reference\Reference;

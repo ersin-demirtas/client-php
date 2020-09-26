@@ -1,6 +1,6 @@
 <?php
 
-namespace ErsinDemirtas\PolygonIOTests\Rest\Common;
+namespace ErsinDemirtas\PolygonIOTests\Unit\Rest\Common;
 
 use ErsinDemirtas\PolygonIOTests\TestCase;
 use ErsinDemirtas\PolygonIO\Rest\Common\Mappers;

@@ -14,6 +14,8 @@ $client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
 
 $currencies = ['C.USD'];
 
-$client->websockets->forex->connect($currencies, function($data) {
-    var_dump($data);
-});
+$client->websockets()
+    ->forex()
+    ->connect($currencies, function($data) {
+        var_dump($data);
+    });

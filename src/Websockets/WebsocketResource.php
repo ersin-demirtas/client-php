@@ -18,7 +18,7 @@ class WebsocketResource
     /**
      * @var string
      */
-    private string $apiKey;
+    public string $apiKey;
 
     /**
      * WebsocketResource constructor.

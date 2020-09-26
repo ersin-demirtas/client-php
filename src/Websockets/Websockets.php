@@ -10,19 +10,9 @@ class Websockets
 {
 
     /**
-     * @var WebsocketResource
+     * @var string
      */
-    public WebsocketResource $stocks;
-
-    /**
-     * @var WebsocketResource
-     */
-    public WebsocketResource $crypto;
-
-    /**
-     * @var WebsocketResource
-     */
-    public WebsocketResource $forex;
+    public string $apiKey;
 
     /**
      * Websockets constructor.
@@ -31,8 +21,40 @@ class Websockets
      */
     public function __construct(string $apiKey)
     {
-        $this->crypto = new WebsocketResource('crypto', $apiKey);
-        $this->forex = new WebsocketResource('forex', $apiKey);
-        $this->stocks = new WebsocketResource('stocks', $apiKey);
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @return WebsocketResource
+     */
+    public function crypto()
+    {
+        return $this->createWebsocketResource('crypto');
+    }
+
+    /**
+     * @return WebsocketResource
+     */
+    public function forex()
+    {
+        return $this->createWebsocketResource('forex');
+    }
+
+    /**
+     * @return WebsocketResource
+     */
+    public function stocks()
+    {
+        return $this->createWebsocketResource('stocks');
+    }
+
+    /**
+     * @param $topic
+     *
+     * @return WebsocketResource
+     */
+    public function createWebsocketResource($topic)
+    {
+        return new WebsocketResource('stocks', $this->apiKey);
     }
 }
