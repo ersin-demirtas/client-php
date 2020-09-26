@@ -11,11 +11,10 @@
 require __DIR__ . '/../../vendor/autoload.php';
 
 $client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
+$forex = $client->websockets()->forex();
 
 $currencies = ['C.USD'];
 
-$client->websockets()
-    ->forex()
-    ->connect($currencies, function($data) {
+$forex->connect($currencies, function($data) {
         var_dump($data);
     });

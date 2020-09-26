@@ -12,11 +12,10 @@
 require __DIR__ . '/../../vendor/autoload.php';
 
 $client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
+$crypto = $client->websockets()->crypto();
 
 $currencies = ['XQ.BTC-USD'];
 
-$client->websockets()
-    ->crypto()
-    ->connect($currencies, function($data) {
-        var_dump($data);
-    });
+$crypto->connect($currencies, function($data) {
+    var_dump($data);
+});
