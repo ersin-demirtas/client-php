@@ -28,10 +28,10 @@ The `ErsinDemirtas\PolygonIO\Rest\Rest` class export 4 modules:
 
 require __DIR__ . '/vendor/autoload.php';
 
-$rest = new ErsinDemirtas\PolygonIO\Rest\Rest('API_KEY');
+$client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
 
 $amount = 10;
-var_dump($rest->forex->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
+var_dump($client->rest()->forex()->realTimeCurrencyConversion->get('USD', 'EUR', compact('amount')));
 ```
 
 ## [Websockets](https://polygon.io/sockets)
@@ -47,11 +47,13 @@ $client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
 
 $currencies = ['XQ.BTC-USD'];
 
-$client->websockets->crypto->connect($currencies, function($data) {
+$client->websockets()->crypto()->connect($currencies, function($data) {
     var_dump($data);
 });
 
 ```
+
+More examples are available under [examples](examples) folder.
 
 ## Development
 

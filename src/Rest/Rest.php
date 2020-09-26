@@ -14,25 +14,7 @@ use ErsinDemirtas\PolygonIO\Rest\Stocks\Stocks;
 class Rest
 {
 
-    /**
-     * @var Reference
-     */
-    public Reference $reference;
-
-    /**
-     * @var Stocks
-     */
-    public Stocks $stocks;
-
-    /**
-     * @var Forex
-     */
-    public Forex $forex;
-
-    /**
-     * @var Crypto
-     */
-    public Crypto $crypto;
+    public string $apiKey;
 
     /**
      * Rest constructor.
@@ -41,9 +23,38 @@ class Rest
      */
     public function __construct(string $apiKey)
     {
-        $this->reference = new Reference($apiKey);
-        $this->stocks = new Stocks($apiKey);
-        $this->forex = new Forex($apiKey);
-        $this->crypto = new Crypto($apiKey);
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @return Reference
+     */
+    public function reference()
+    {
+        return new Reference($this->apiKey);
+    }
+
+    /**
+     * @return Stocks
+     */
+    public function stocks()
+    {
+        return new Stocks($this->apiKey);
+    }
+
+    /**
+     * @return Forex
+     */
+    public function forex()
+    {
+        return new Forex($this->apiKey);
+    }
+
+    /**
+     * @return Crypto
+     */
+    public function crypto()
+    {
+        return new Crypto($this->apiKey);
     }
 }
