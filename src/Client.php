@@ -10,7 +10,7 @@ use ErsinDemirtas\PolygonIO\Websockets\Websockets;
  *
  * @package ErsinDemirtas\PolygonIO
  */
-class PolygonIO
+class Client
 {
 
     /**

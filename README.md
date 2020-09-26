@@ -43,7 +43,7 @@ The WebSocket clients use the Amp event loop. You can only use one WebSocket cli
 
 require __DIR__ . '/vendor/autoload.php';
 
-$client = new ErsinDemirtas\PolygonIO\PolygonIO('API_KEY');
+$client = new ErsinDemirtas\PolygonIO\Client('API_KEY');
 
 $currencies = ['XQ.BTC-USD'];
 
