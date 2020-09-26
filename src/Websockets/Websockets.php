@@ -55,6 +55,6 @@ class Websockets
      */
     public function createWebsocketResource($topic)
     {
-        return new WebsocketResource('stocks', $this->apiKey);
+        return new WebsocketResource($topic, $this->apiKey);
     }
 }

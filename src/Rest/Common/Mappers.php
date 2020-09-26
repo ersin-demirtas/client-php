@@ -15,6 +15,7 @@ class Mappers
     const PRED_DAY = 'prevDay';
     const OPEN_TRADES = 'openTrades';
     const CLOSING_TRADES = 'closingTrades';
+    const RESULTS = 'results';
 
     /**
      * @param  array  $tick

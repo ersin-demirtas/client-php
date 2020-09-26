@@ -1,6 +1,7 @@
 <?php
 namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
 
+use ErsinDemirtas\PolygonIO\Rest\Common\Mappers;
 use ErsinDemirtas\PolygonIO\Rest\RestResource;
 
 /**
@@ -36,8 +37,8 @@ class HistoricQuotesV2 extends RestResource
      */
     protected function mapper(array $response): array
     {
-        if ($response['results']) {
-            $response['results'] = array_map(function ($result) {
+        if ($response[Mappers::RESULTS]) {
+            $response[Mappers::RESULTS] = array_map(function ($result) {
                 $result['ticker'] = $result['T'];
                 $result['SIPTimestamp'] = $result['t'];
                 $result['participantExchangeTimestamp'] = $result['y'];
@@ -53,7 +54,7 @@ class HistoricQuotesV2 extends RestResource
                 $result['askSize'] = $result['S'];
                 $result['tapeWhereTradeOccured'] = $result['z'];
                 return $result;
-            }, $response['results']);
+            }, $response[Mappers::RESULTS]);
         }
         return $response;
     }
