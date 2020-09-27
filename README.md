@@ -1,5 +1,16 @@
-# Polygon.io PHP API Client
+# Polygon.io API PHP Client 
 This repository is a fork of polygon-io/client-php, the original repository is not been maintained properly so decided to maintain my own version. Feel free to contribute. 
+
+## Compatibility matrix
+Below you will find which PHP client version to use depending on your PIM version.
+
+PIM Version | API PHP client version|Stable
+--- | --- | ---
+v1.0 - v2.0 | v.1.x | :white_medium_small_square:
+v1.0 - v2.0 | v.2.x | :white_check_mark:
+v1.0 - v2.0 | v.3.x | :white_medium_small_square:
+
+This package uses [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) as HTTP abstraction layer and [amphp/websocket-client](https://github.com/amphp/websocket-client) as WebSocket abstraction layer. 
 
 ## Installation guide
 
