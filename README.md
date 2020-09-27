@@ -4,7 +4,7 @@ This repository is a fork of polygon-io/client-php, the original repository is n
 ## Compatibility matrix
 Below you will find which PHP client version to use depending on your PIM version.
 
-PIM Version | API PHP client version|Stable
+API Version | API PHP client version|Stable
 --- | --- | ---
 v1.0 - v2.0 | v.1.x | :white_medium_small_square:
 v1.0 - v2.0 | v.2.x | :white_check_mark:
