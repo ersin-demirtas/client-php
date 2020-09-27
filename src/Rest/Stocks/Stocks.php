@@ -8,21 +8,11 @@ namespace ErsinDemirtas\PolygonIO\Rest\Stocks;
  */
 class Stocks
 {
-    public Exchanges $exchanges;
-    public HistoricTrades $historicTrades;
-    public HistoricTradesV2 $historicTradesV2;
-    public HistoricQuotes $historicQuotes;
-    public HistoricQuotesV2 $historicQuotesV2;
-    public LastTradeForSymbol $lastTradeForSymbol;
-    public LastQuoteForSymbol $lastQuoteForSymbol;
-    public DailyOpenClose $dailyOpenClose;
-    public ConditionMappings $conditionMappings;
-    public SnapshotAllTickers $snapshotAllTickers;
-    public SnapshotSingleTicker $snapshotSingleTicker;
-    public SnapshotGainersLosers $snapshotGainersLosers;
-    public PreviousClose $previousClose;
-    public Aggregates $aggregates;
-    public GroupedDaily $groupedDaily;
+
+    /**
+     * @var string
+     */
+    public string $apiKey;
 
     /**
      * Stocks constructor.
@@ -31,20 +21,166 @@ class Stocks
      */
     public function __construct(string $apiKey)
     {
-        $this->exchanges = new Exchanges($apiKey);
-        $this->historicTrades = new HistoricTrades($apiKey);
-        $this->historicTradesV2 = new HistoricTradesV2($apiKey);
-        $this->historicQuotes = new HistoricQuotes($apiKey);
-        $this->historicQuotesV2 = new HistoricQuotesV2($apiKey);
-        $this->lastTradeForSymbol = new LastTradeForSymbol($apiKey);
-        $this->lastQuoteForSymbol = new LastQuoteForSymbol($apiKey);
-        $this->dailyOpenClose = new DailyOpenClose($apiKey);
-        $this->conditionMappings = new ConditionMappings($apiKey);
-        $this->snapshotAllTickers = new SnapshotAllTickers($apiKey);
-        $this->snapshotSingleTicker = new SnapshotSingleTicker($apiKey);
-        $this->snapshotGainersLosers = new SnapshotGainersLosers($apiKey);
-        $this->previousClose = new PreviousClose($apiKey);
-        $this->aggregates = new Aggregates($apiKey);
-        $this->groupedDaily = new GroupedDaily($apiKey);
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @return array
+     */
+    public function exchanges()
+    {
+        return (new Exchanges($this->apiKey))->get();
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array
+     */
+    public function historicTrades(string $tickerSymbol, string $date)
+    {
+        return (new HistoricTrades($this->apiKey))->get($tickerSymbol, $date);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array
+     */
+    public function historicTradesV2(string $tickerSymbol, string $date)
+    {
+        return (new HistoricTradesV2($this->apiKey))->get($tickerSymbol, $date);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array
+     */
+    public function historicQuotes(string $tickerSymbol, string $date)
+    {
+        return (new HistoricQuotes($this->apiKey))->get($tickerSymbol, $date);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array
+     */
+    public function historicQuotesV2(string $tickerSymbol, string $date)
+    {
+        return (new HistoricQuotesV2($this->apiKey))->get($tickerSymbol, $date);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array
+     */
+    public function lastTradeForSymbol(string $tickerSymbol)
+    {
+        return (new LastTradeForSymbol($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array
+     */
+    public function lastQuoteForSymbol(string $tickerSymbol)
+    {
+        return (new LastQuoteForSymbol($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $date
+     *
+     * @return array|mixed
+     */
+    public function dailyOpenClose(string $tickerSymbol, string $date)
+    {
+        return (new DailyOpenClose($this->apiKey))->get($tickerSymbol, $date);
+    }
+
+    /**
+     * @param  string  $tickTypes
+     *
+     * @return array|mixed
+     */
+    public function conditionMappings(string $tickTypes = 'trades')
+    {
+        return (new ConditionMappings($this->apiKey))->get($tickTypes);
+    }
+
+    /**
+     * @return array
+     */
+    public function snapshotAllTickers()
+    {
+        return (new SnapshotAllTickers($this->apiKey))->get();
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array
+     */
+    public function snapshotSingleTicker(string $tickerSymbol)
+    {
+        return (new SnapshotSingleTicker($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $direction
+     *
+     * @return array
+     */
+    public function snapshotGainersLosers(string $direction = 'gainers')
+    {
+        return (new SnapshotGainersLosers($this->apiKey))->get($direction);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  array  $params
+     *
+     * @return array
+     */
+    public function previousClose(string $tickerSymbol, array $params = [])
+    {
+        return (new PreviousClose($this->apiKey))->get($tickerSymbol, $params);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  string  $multiplier
+     * @param  string  $from
+     * @param  string  $to
+     * @param  string  $timespan
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function aggregates(string $tickerSymbol, string $multiplier, string $from, string $to, string $timespan = 'days', array $params = [])
+    {
+        return (new Aggregates($this->apiKey))->get($tickerSymbol, $multiplier, $from, $to, $timespan = 'days', $params = []);
+    }
+
+    /**
+     * @param  string  $date
+     * @param  string  $locale
+     * @param  string  $market
+     * @param  array  $params
+     *
+     * @return array
+     */
+    public function groupedDaily(string $date, string $locale = 'US', string $market = 'STOCKS', array $params = [])
+    {
+        return (new GroupedDaily($this->apiKey))->get($date, $locale, $market, $params);
     }
 }

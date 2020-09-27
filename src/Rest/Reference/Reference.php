@@ -8,17 +8,10 @@ namespace ErsinDemirtas\PolygonIO\Rest\Reference;
  */
 class Reference
 {
-    public Tickers $tickers;
-    public TickerTypes $tickerTypes;
-    public TickerDetails $tickerDetails;
-    public TickerNews $tickerNews;
-    public Markets $markets;
-    public Locales $locales;
-    public StockSplits $stockSplits;
-    public StockDividends $stockDividends;
-    public StockFinancials $stockFinancials;
-    public MarketStatus $marketStatus;
-    public MarketHolidays $marketHolidays;
+    /**
+     * @var string
+     */
+    protected string $apiKey;
 
     /**
      * Reference constructor.
@@ -27,16 +20,108 @@ class Reference
      */
     public function __construct(string $apiKey)
     {
-        $this->tickers = new Tickers($apiKey);
-        $this->tickerTypes = new TickerTypes($apiKey);
-        $this->tickerDetails = new TickerDetails($apiKey);
-        $this->tickerNews = new TickerNews($apiKey);
-        $this->markets = new Markets($apiKey);
-        $this->locales = new Locales($apiKey);
-        $this->stockSplits = new StockSplits($apiKey);
-        $this->stockDividends = new StockDividends($apiKey);
-        $this->stockFinancials = new StockFinancials($apiKey);
-        $this->marketStatus = new MarketStatus($apiKey);
-        $this->marketHolidays = new MarketHolidays($apiKey);
+        $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function tickers($params = [])
+    {
+        return (new Tickers($this->apiKey))->get($params);
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function tickerTypes()
+    {
+        return (new TickerTypes($this->apiKey))->get();
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return mixed
+     */
+    public function tickerDetails(string $tickerSymbol)
+    {
+        return (new TickerDetails($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function tickerNews(string $tickerSymbol, array $params = [])
+    {
+        return (new TickerNews($this->apiKey))->get($tickerSymbol, $params);
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function markets()
+    {
+        return (new Markets($this->apiKey))->get();
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function locales()
+    {
+        return (new Locales($this->apiKey))->get();
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array|mixed
+     */
+    public function stockSplits(string $tickerSymbol)
+    {
+        return (new StockSplits($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     *
+     * @return array|mixed
+     */
+    public function stockDividends(string $tickerSymbol)
+    {
+        return (new StockDividends($this->apiKey))->get($tickerSymbol);
+    }
+
+    /**
+     * @param  string  $tickerSymbol
+     * @param  array  $params
+     *
+     * @return array|mixed
+     */
+    public function stockFinancials(string $tickerSymbol, array $params = [])
+    {
+        return (new StockFinancials($this->apiKey))->get($tickerSymbol, $params);
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function marketStatus()
+    {
+        return (new MarketStatus($this->apiKey))->get();
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function marketHolidays()
+    {
+        return (new MarketHolidays($this->apiKey))->get();
     }
 }
